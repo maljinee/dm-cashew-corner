@@ -1,0 +1,8 @@
+ul.nav.nav-pills {
+    text-align: right;
+}
+
+.nav-pills>li {
+    float: none;
+    display: inline-block;
+}
