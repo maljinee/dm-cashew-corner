@@ -1,4 +1,28 @@
 <?php
+
+echo $_POST["sell"];
+echo "<br>";
+echo  $_POST['averageCostPerUnit'];
+echo "<br>";
+echo $_POST['quantity'];
+echo "<br>";
+echo   $_POST['costPerUnit'];
+echo "<br>";
+echo   $_POST['season'];
+echo "<br>";
+echo   $_POST['paymentMethod'];
+echo "<br>";
+echo   $_POST['distance'];
+echo "<br>";
+echo   $_POST['deliveryMethod'];
+echo "<br>";
+echo   $_POST['deliveryCost'];
+echo "<br>";
+echo   $_POST['timeToReceive'];
+//var_dump($_POST);
+die();
+
+
  session_start();
 
  /*echo json_encode($_SESSION);
