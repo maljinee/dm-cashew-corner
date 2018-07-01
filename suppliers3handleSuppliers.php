@@ -280,6 +280,10 @@
         </li>
               
           
+        <?php
+
+          if($_SESSION['userType'] == 'manager') {
+           ?>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title=Reports>
           <a class="nav-link" href="#">
@@ -287,8 +291,21 @@
             <span class="nav-link-text">Reports</span>
           </a>
         </li>
+
+
+          <?php
+          }
+          ?>
+             
+             
              
             </ul>
+
+
+           <?php
+
+              if($_SESSION['userType'] == 'manager') {
+           ?>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Saved reports</span>
@@ -325,9 +342,17 @@
             <span class="nav-link-text">Year-end sale</span>
           </a>
         </li>
+
+        <?php
+          }
+          ?>
          
             </ul>
           </div>
+
+          
+          <br><br><br><br><br><br><br><br><br><br>
+              
         </nav>
 
         <br><br><br><br>

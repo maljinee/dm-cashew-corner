@@ -431,6 +431,9 @@ if(isset($_POST['username1'])&&($_POST['password1']))
         $statement = $database->prepare("SELECT * From users Where user_name = ? and password = ?");
         $statement->execute(array($userName1,$cryptpass1));
         $rows = $statement->rowCount();
+        $row=$statement->fetch(PDO::FETCH_ASSOC);
+        $userType=$row['userType'];
+
 
                     
         } catch(PDOException $ex) {
@@ -442,16 +445,39 @@ if(isset($_POST['username1'])&&($_POST['password1']))
  
   
     if($rows>0)  
-    {  
-         $_SESSION['authentication']=true;
+    {   
+
+        $_SESSION['authentication']=true;
         $_SESSION['userName1'] = $_POST["username1"];
+        $_SESSION['userType']=$userType;
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($result);
+        echo "Result: " . $row['userType'];
+
+        
+       
+
+
+         if($userType=="admin") {
+        echo "<script>window.open('admin.php','_self')</script>";  
+  
+
+          }
+        //$_SESSION['email']=$user_email;//here session is used and value of $user_email store in $_SESSION. 
+
+        else{
+            
+
+        
        // $_SESSION['userId'] = x;
         echo "<script>window.open('dashboard.php','_self')</script>";  
+
   
         //$_SESSION['email']=$user_email;//here session is used and value of $user_email store in $_SESSION.  
   
-    }  
-    else  
+    } 
+    } 
+    else   
     {  
       echo "<script>alert('username or password is incorrect!')</script>";  
     }  
@@ -517,88 +543,89 @@ if(isset($_POST['username1'])&&($_POST['password1']))
             
             <form class="form-signin" method="post">
 
-              <div class="form-group">
-                <label for="inputUserName"><strong>This field is only for staff members</strong></label>
-              </div>
-      
-              <div class="form-group">
-                 <div class="required">
-                <label for="fullName">Name</label>
-              </div>
-                <input type="text" name="fullname" class="form-control" placeholder="Full Name"  required />
-              </div>
 
-              <div class="form-group">
-                 <div class="required">
-                <label for="eMail">Email</label>
-              </div>
-                <input type="email"  name="email" class="form-control" placeholder="Email address" required />
-              </div>
+                                <div class="form-group">
+                                  <label for="inputUserName"><strong>This field is only for staff members</strong></label>
+                                </div>
+                        
+                                <div class="form-group">
+                                   <div class="required">
+                                  <label for="fullName">Name</label>
+                                </div>
+                                  <input type="text" name="fullname" class="form-control" placeholder="Full Name"  required />
+                                </div>
 
-              <div class="form-group">
-                 <div class="required">
-                <label for="inputUserName">User Name</label>
-                 </div>
-                <input type="text" name="username" class="form-control" placeholder="User Name"  required="" />
-              </div>
+                                <div class="form-group">
+                                   <div class="required">
+                                  <label for="eMail">Email</label>
+                                </div>
+                                  <input type="email"  name="email" class="form-control" placeholder="Email address" required />
+                                </div>
 
-
-      <script type="text/javascript"> 
-        var check = function() {
-  if (document.getElementById('password').value ==
-    document.getElementById('confirm_password').value) {
-    document.getElementById('message').style.color = 'green';
-    document.getElementById('message').innerHTML = 'matching';
-  } else {
-    document.getElementById('message').style.color = 'red';
-    document.getElementById('message').innerHTML = 'not matching';
-  }
-}
-</script>   
-
-              <div class="form-group">
-                 <div class="required">
-                <label for="inputPassword">Password</label>
-              </div> 
-                <input type="password" name="password" id="password" class="form-control" placeholder="Password"  required="" onkeyup='check();' />
-                <!--<span class="help-block">Strong Password</span> -->
-              <div>
-          </div>
-        </div>
+                                <div class="form-group">
+                                   <div class="required">
+                                  <label for="inputUserName">User Name</label>
+                                   </div>
+                                  <input type="text" name="username" class="form-control" placeholder="User Name"  required="" />
+                                </div>
 
 
+                        <script type="text/javascript"> 
+                          var check = function() {
+                                if (document.getElementById('password').value ==
+                                  document.getElementById('confirm_password').value) {
+                                  document.getElementById('message').style.color = 'green';
+                                  document.getElementById('message').innerHTML = 'matching';
+                                } else {
+                                  document.getElementById('message').style.color = 'red';
+                                  document.getElementById('message').innerHTML = 'not matching';
+                                }
+                            }
+                  </script>   
 
-              <div class="form-group">
-                 <div class="required">
-                <label for="inputPassword">Password Confirm</label>
-              </div>
-                <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Password Confirm"  required="" onkeyup='check();'  />
-
-                 <span id='message'></span>
-                
-                <!--<span class="help-block">Strong Password</span> -->
-              <div>
-               
-          </div>
-        </div>
-             </div>
-
-          <div class="modal-footer">
-            <button class="btn btn-primary" type="submit" name="submit" action="signupsuccess.php">Sign Up</button>
-            <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button>
-
-             
-</div>
+                                <div class="form-group">
+                                   <div class="required">
+                                  <label for="inputPassword">Password</label>
+                                </div> 
+                                  <input type="password" name="password" id="password" class="form-control" placeholder="Password"  required="" onkeyup='check();' />
+                                  <!--<span class="help-block">Strong Password</span> -->
+                                <div>
+                            </div>
+                          </div>
 
 
-<!-- <div class="alert alert-primary" role="alert">
-  Sign up success!
-</div>
-         -->    <!--  <button class="btn btn-outline-success btn-primary" data-target="#signinModal" data-dismiss="modal" data-toggle="modal">Creata an Account</button> -->
 
-          </div>
+                                <div class="form-group">
+                                   <div class="required">
+                                  <label for="inputPassword">Password Confirm</label>
+                                </div>
+                                  <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Password Confirm"  required="" onkeyup='check();'  />
 
-      
+                                   <span id='message'></span>
+                                  
+                                  <!--<span class="help-block">Strong Password</span> -->
+                                <div>
+                                 
+                            </div>
+                          </div>
+                               </div>
+
+                            <div class="modal-footer">
+                              <button class="btn btn-primary" type="submit" name="submit" action="signupsuccess.php">Sign Up</button>
+                              <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button>
+
+                               
+                  </div>
+
+
+                  <!-- <div class="alert alert-primary" role="alert">
+                    Sign up success!
+                  </div>
+                           -->    <!--  <button class="btn btn-outline-success btn-primary" data-target="#signinModal" data-dismiss="modal" data-toggle="modal">Creata an Account</button> -->
+
+                            </div>
+
+                        
  
             </form>
 
@@ -663,10 +690,11 @@ if(isset($_POST['username1'])&&($_POST['password1']))
     ?>
   
 
-
-
   </body>
 </html>
+
+
+
 
 
 

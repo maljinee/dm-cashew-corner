@@ -104,6 +104,8 @@
       }
     </script>
 
+     <!--  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top sticky-top bg-dark">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0 navbar-right" href="#">DM Cashew Corner</a>  -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4682B4;">
       <a class="navbar-brand" href="#" style="font-family: cursive;"><img src="theme2pics/food_Cashew-Nut-Seed-Fruit-512.png" height="30px" width="30px">DM Cashew Corner</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,11 +114,31 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-        
+        <!--  <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>  -->
+        <!--   <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+        </li>  -->
+        <!--    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+        </li>  -->
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
-     
+       <!--   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
           <style type="text/css">
       
           .btn{width:40px;}
@@ -143,7 +165,9 @@
             <span class="d-lg-none">Alerts
               <span class="badge badge-pill badge-warning">6 New</span>
             </span>
-          
+           <!--  <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span> -->
           </a>
           <div class="dropdown-menu" aria-labelledby="alertsDropdown">
             <h6 class="dropdown-header">New Alerts:</h6>
@@ -181,7 +205,8 @@
           <li class="nav-item navbar-right">
             <a class="nav-link" href=""> 
               <?php
-              echo($_SESSION['full_name']);
+              /*echo($_SESSION['full_name']);*/
+              echo "Admin";
               //  echo($_SESSION['usertest']);
               //echo json_encode($_SESSION);
               // echo"thirdpage" . ($_SESSION['name']);
@@ -197,6 +222,45 @@
         </ul>  
       </div>
     </nav>
+
+
+  
+    <!-- <li class="nav-item">
+          <form class="form-inline my-2 my-lg-0 mr-lg-2">
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for...">
+              <span class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>   -->
+    
+    <!--<nav class="navbar navbar-dark bg-dark fixed-top sticky-top justify-content-right">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 navbar-right">DM Cashew Corner</a>
+    <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </nav>  -->
+    <!-- <form class="justify-content-right">
+    <input class="form-control form-control-dark w-25" type="text" placeholder="Search" aria-label="Search">
+    </form> -->
+    <!--   <ul class="navbar-nav px-3 navbar-right">
+        <li class="nav-item navbar-right">
+          <a class="nav-link" href="#" >Sign out</a>
+        </li>
+      </ul>  -->
+    <!-- </nav>   -->
+
+    <!--  <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>  -->
+
+
+
    
 
     <div class="container-fluid">
@@ -204,14 +268,74 @@
         <nav class="col-md-2 d-none d-md-block bg-dark nav-link sidebar navbar-dark bg-dark">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-             
+              <!-- <li class="nav-item active">
+                <a class=" nav-link" href="dashboard.php">
+                  <span data-feather="home"></span>
+                  Dashboard
+                </a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="monitor"></span>
+                  About
+                </a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="suppliers.php">
+                  <span data-feather="users" ></span>
+                  Suppliers
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="user"></span>
+                  Customers
+                </a>
+              </li>
+            
+               <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="book"></span>
+                  Employee Duties
+                </a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="dollar-sign"></span>
+                  Payroll
+                </a>
+              </li>
+              
+              
+              
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Orders
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  Products
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Reports
+                </a>
+              </li>
+              -->
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="dashboard.php">
+          <a class="nav-link" href="admin.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
          </li>
-              
+             
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="About">
           <a class="nav-link" href="#">
             <i class="fa fa-info-circle"></i>
@@ -219,32 +343,26 @@
           </a>
         </li>
 
-              
+           
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Suppliers">
           <a class="nav-link" href="suppliers.php">
             <i class="fa fa-address-card-o"></i>
-            <span class="nav-link-text">Suppliers</span>
+            <span class="nav-link-text">Setting</span>
           </a>
         </li>
 
 
-             <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="user"></span>
-                  Customers
-                </a>
-              </li> -->
+           
 
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
+      <!--   <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="customers.php">
             <i class="fa fa-group"></i>
             <span class="nav-link-text">Customers</span>
           </a>
         </li>
 
-            
+           
              
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Employee Duties">
           <a class="nav-link" href="#">
@@ -254,6 +372,8 @@
         </li>
 
 
+           
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Payroll">
           <a class="nav-link" href="#">
             <i class=" fa fa-money"></i>
@@ -261,7 +381,7 @@
           </a>
         </li>
 
-         
+          
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
           <a class="nav-link" href="#">
@@ -270,7 +390,7 @@
           </a>
         </li>
 
-          
+           
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
           <a class="nav-link" href="#">
@@ -279,31 +399,15 @@
           </a>
         </li>
               
-          <?php
- 
-            if($_SESSION['userType'] == 'manager') {
-          ?>
- 
-
+           
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title=Reports>
           <a class="nav-link" href="#">
             <i class="fa fa-newspaper-o"></i>  
             <span class="nav-link-text">Reports</span>
           </a>
         </li>
-
-          <?php
-
-           }
-
-          ?>
              
             </ul>
-
-          <?php
- 
-            if($_SESSION['userType'] == 'manager') {
-          ?>  
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Saved reports</span>
@@ -312,46 +416,13 @@
               </a>
             </h6>
             <ul class="nav flex-column mb-2">
-             
-              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Current month">
-          <a class="nav-link" href="#">
-            <i class="fa fa-file-pdf-o"></i>  
-            <span class="nav-link-text">Current month</span>
-          </a>
-        </li>
-
-         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Last quarter">
-          <a class="nav-link" href="#">
-            <i class="fa fa-file-pdf-o"></i>  
-            <span class="nav-link-text">Last quarter</span>
-          </a>
-        </li>
-         
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Social engagement">
-          <a class="nav-link" href="#">
-            <i class="fa fa-file-pdf-o"></i>  
-            <span class="nav-link-text">Social engagement</span>
-          </a>
-        </li>
-         
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Year-end sale">
-          <a class="nav-link" href="#">
-            <i class="fa fa-file-pdf-o"></i>  
-            <span class="nav-link-text">Year-end sale</span>
-          </a>
-        </li>
-
-         <?php
-
-           }
-
-          ?>
-         
+              
+          -->
             </ul>
           </div>
-
-          <br><br><br><br><br><br><br><br><br><br>
         </nav>
+
+   
 
         <br><br><br><br>
 
@@ -360,9 +431,9 @@
             <!-- <h1 class="h2">Handle Supplier Details</h1> -->
             <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="customers.php">Customers</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Handle Customer Details</li>
+    <li class="breadcrumb-item"><a href="admin.php">Dashboard</a></li>
+   <!--  <li class="breadcrumb-item"><a href="suppliers.php">Admin</a></li> -->
+    <li class="breadcrumb-item active" aria-current="page">View Users</li>
   </ol>
 </nav>
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -384,12 +455,11 @@
    $username="root";
    $password="";
    $dbname="dmcashewcorner";
-   $customerid="";
-   $customername="";
-   $contactno="";
-   $address="";
-   $distance="";
-   $location="";
+   $full_name="";
+   $email="";
+   $user_name="";
+   $usertype="";
+
 
    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -407,12 +477,11 @@
   //  $my_var = isset($_POST['myPostData']) ? $_POST['myPostData'] : "";
    // $data[0]= isset($_POST['supplierid']) ? $_POST['supplierid'] : "";
 
-    $data[0]=$_POST['customerid'];
-    $data[1]=$_POST['customername'];
-    $data[2]=$_POST['contactno'];
-    $data[3]=$_POST['address'];
-    $data[4]=$_POST['distance'];
-    $data[5]=$_POST['location'];
+    $data[0]=$_POST['full_name'];
+    $data[1]=$_POST['email'];
+    $data[2]=$_POST['user_name'];
+    $data[3]=$_POST['usertype'];
+    
     return $data;
   }
 
@@ -421,7 +490,7 @@
   {
     $info=getData();
    // $search_query="SELECT * FROM suppliers WHERE supplierid='$info[0]'";
-    $search_query="SELECT * FROM customers WHERE customername='$info[1]'";
+    $search_query="SELECT * FROM users WHERE full_name='$info[0]'";
     // $search_query="SELECT * FROM suppliers WHERE contactno='$info[2]'";
    //   $search_query="SELECT * FROM suppliers WHERE location='$info[5]'";
     $search_result=mysqli_query($conn, $search_query);
@@ -431,12 +500,11 @@
         {
           while($rows=mysqli_fetch_array($search_result))
           {
-            $customerid=$rows['customerid'];
-            $customername=$rows['customername'];
-            $contactno=$rows['contactno'];
-            $address=$rows['address'];
-            $distance=$rows['distance'];
-            $location=$rows['location'];
+            $full_name=$rows['full_name'];
+            $email=$rows['email'];
+            $user_name=$rows['user_name'];
+            $usertype=$rows['usertype'];
+            
           }
         }else{
           echo("no data are available");
@@ -452,7 +520,7 @@
   {
     $info=getData();
    // $search_query="SELECT * FROM suppliers WHERE supplierid='$info[0]'";
-    $search_query="SELECT * FROM customers WHERE customername='$info[1]'";
+    $search_query="SELECT * FROM users WHERE full_name='$info[0]'";
     // $search_query="SELECT * FROM suppliers WHERE contactno='$info[2]'";
    //   $search_query="SELECT * FROM suppliers WHERE location='$info[5]'";
     $search_result=mysqli_query($conn, $search_query);
@@ -462,12 +530,11 @@
         {
           while($rows=mysqli_fetch_array($search_result))
           {
-            $customerid=$rows['customerid'];
-            $customername=$rows['customername'];
-            $contactno=$rows['contactno'];
-            $address=$rows['address'];
-            $distance=$rows['distance'];
-            $location=$rows['location'];
+            $full_name=$rows['full_name'];
+            $email=$rows['email'];
+            $user_name=$rows['user_name'];
+            $usertype=$rows['usertype'];
+           
           }
         }else{
           echo("no data are available");
@@ -484,7 +551,7 @@
   {
     $info=getData();
    // $search_query="SELECT * FROM suppliers WHERE supplierid='$info[0]'";
-    $search_query="SELECT * FROM customers WHERE contactno='$info[2]'";
+    $search_query="SELECT * FROM users WHERE email='$info[1]'";
     // $search_query="SELECT * FROM suppliers WHERE contactno='$info[2]'";
    //   $search_query="SELECT * FROM suppliers WHERE location='$info[5]'";
     $search_result=mysqli_query($conn, $search_query);
@@ -494,12 +561,11 @@
         {
           while($rows=mysqli_fetch_array($search_result))
           {
-            $customerid=$rows['customerid'];
-            $customername=$rows['customername'];
-            $contactno=$rows['contactno'];
-            $address=$rows['address'];
-            $distance=$rows['distance'];
-            $location=$rows['location'];
+            $full_name=$rows['full_name'];
+            $email=$rows['email'];
+            $user_name=$rows['user_name'];
+            $usertype=$rows['usertype'];
+           
           }
         }else{
           echo("no data are available");
@@ -513,7 +579,7 @@
   //insert
   if(isset($_POST['insert'])){
     $info=getData();
-    $insert_query="INSERT INTO customers(customerid,customername,contactno,address,distance,location)VALUES('$info[0]','$info[1]','$info[2]','$info[3]','$info[4]','$info[5]')";
+    $insert_query="INSERT INTO users(full_name,email,user_name,usertype)VALUES('$info[0]','$info[1]','$info[2]','$info[3]')";
     try{
       $insert_result=mysqli_query($conn,$insert_query);
       if($insert_result)
@@ -533,7 +599,7 @@
   //delete
   if(isset($_POST['delete'])){
     $info=getData();
-    $delete_query="DELETE FROM customers WHERE customerid='$info[0]'";
+    $delete_query="DELETE FROM users WHERE full_name='$info[1]'";
     try{
       $delete_result=mysqli_query($conn,$delete_query);
       if($delete_result){
@@ -552,7 +618,7 @@
   //edit
   if(isset($_POST['update'])){
     $info=getData();
-    $update_query="UPDATE customers SET customername='$info[1]',contactno='$info[2]',address='$info[3]',distance='$info[4]',location='$info[5]' WHERE customerid='$info[0]'";
+    $update_query="UPDATE users SET full_name='$info[0]',email='$info[1]',user_name='$info[2]',usertype='$info[3]' WHERE full_name='$info[0]'";
     try{
       $update_result=mysqli_query($conn,$update_query);
       if($update_result){
@@ -575,7 +641,7 @@
 
   
 
-  <form onreset="cleartheform()" class="border-class" id="myForm" method="post" action="customers3handlecustomers.php">
+  <form onreset="cleartheform()" class="border-class" id="myForm" method="post" action="adminviewusers.php">
     
       <style type="text/css">
       
@@ -586,9 +652,9 @@
      
 
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Customer Id</strong></label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Full Name</strong></label>
     <div class="col-sm-5">
-      <input type="number" name="customerid" onkeyup="searchbyId()" class="form-control" id="customerid" placeholder="" value="<?php echo($customerid);?>">
+      <input type="text" name="full_name" onkeyup="searchbyId()" class="form-control" id="full_name" placeholder="" value="<?php echo($full_name);?>">
     </div>
  <!--  <script type="text/javascript">
     window.onload = function() {
@@ -601,18 +667,20 @@
     <?php /*echo $row ['supplier_id'];*/ ?>
     
     <div class="col-sm-4">
-         <input type="submit" name="insert" id="add" value="Add" disabled="disabled" onclick="alertAdd()" class="btn btn-primary btn-md">
+         <!-- <input type="submit" name="insert" id="add" value="Add" disabled="disabled" onclick="alertAdd()" class="btn btn-primary btn-md"> -->
+         <input type="submit" 
+         name="update" id="update" onclick="updateConfirm()" value="Update" disabled="disabled" class="btn btn-primary">
       
 
    
     <!-- Example split danger button -->
 <div class="btn-group col-sm-4">
  <!--  <button type="button" class="btn btn-primary">Search by</button> -->
-<!--   <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="min-width: 40px"> -->
+  <!-- <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="min-width: 40px"> -->
     <span class="sr-only">Toggle Dropdown</span>
   </button>
   <div class="dropdown-menu">
-    <input type="submit" name="searchsn" value="Customer Name" class="btn btn-primary btn-md dropdown-item" style="min-width: 150px">
+    <input type="submit" name="searchsn" value="Supplier Name" class="btn btn-primary btn-md dropdown-item" style="min-width: 150px">
     <input type="submit" name="searchcn" value="Contact no" class="btn btn-primary btn-md dropdown-item" style="min-width: 150px">
    
   </div>
@@ -623,17 +691,21 @@
  
   </div>
   <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>Customer Name</strong></label>
+    <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>Email</strong></label>
     <div class="col-sm-5">
-      <input type="text" name="customername"  onkeyup="searchbyName()" class="form-control" id="customername" placeholder="" onkeypress="show1();show2();" value="<?php echo($customername);?>">
+      <input type="text" name="email"  onkeyup="searchbyName()" class="form-control" id="email" placeholder="" onkeypress="show1();show2();" value="<?php echo($email);?>">
     </div>
     <div class="col-sm-4" id="">
 
      
 
-        <input type="submit" 
-         name="update" id="update" onclick="updateConfirm()" value="Update" disabled="disabled" class="btn btn-primary">
-       <!--  <button type="submit" class="btn btn-primary">Update</button> -->
+       
+
+
+        <input type="submit" name="search" value="Search" id="search" onclick="show1()"  class="btn btn-primary">
+      <!--   <button type="submit" class="btn btn-primary">View</button> -->
+   
+ 
 
        
     </div> 
@@ -644,13 +716,14 @@
 
   </div>
    <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Contact No</strong></label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>User Name</strong></label>
     <div class="col-sm-5">
-      <input type="text" name="contactno" onkeyup="searchbyContactno()" class="form-control" id="contactno" placeholder="" onclick="show1(),show2()" value="<?php echo($contactno);?>" onfocus="">
+      <input type="text" name="user_name" onkeyup="searchbyContactno()" class="form-control" id="user_name" placeholder="" onclick="show1(),show2()" value="<?php echo($user_name);?>" onfocus="">
     </div>
       <div class="col-sm-4">
-        <input type="submit" name="search" value="Search" id="search" onclick="show1()"  class="btn btn-primary">
+        <!-- <input type="submit" name="search" value="Search" id="search" onclick="show1()"  class="btn btn-primary"> -->
       <!--   <button type="submit" class="btn btn-primary">View</button> -->
+       <input type="reset" name="Reset" id="clear" value="Clear" class="btn btn-primary"> 
     </div> 
  
 
@@ -660,12 +733,13 @@
 
   </div>
    <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Address</strong></label>
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>User Type</strong></label>
     <div class="col-sm-5">
-      <input type="text" name="address" onkeyup="searchbyAddress()" class="form-control" id="address" placeholder="" onclick="show1(),show2()" value="<?php echo($address);?>" onfocus="">
+      <input type="text" name="usertype" onkeyup="searchbyAddress()" class="form-control" id="usertype" placeholder="" onclick="show1(),show2()" value="<?php echo($usertype);?>" onfocus="">
     </div>
     <div class="col-sm-4">
-       <input type="reset" name="Reset" id="clear" value="Clear" class="btn btn-primary"> 
+      <input type="submit" onclick="confirmDlt()" name="delete" id="delete" value="Delete" class="btn btn-danger">
+      <!--  <input type="reset" name="Reset" id="clear" value="Clear" class="btn btn-primary">  -->
        <!--  <button type="submit" class="btn btn-danger">Delete</button> -->
        <!-- <button type="reset" value="Reset">Reset</button>  -->
     </div> 
@@ -674,21 +748,21 @@
 
   </div>
    <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Distance</strong></label>
+   <!--  <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Distance</strong></label> -->
     <div class="col-sm-5">
-      <input type="text" name="distance" onkeyup="searchbyDistance()" class="form-control" id="distance" onclick="show1(),show2()" placeholder="                                                                               Km" value="<?php echo($distance);?>" onfocus="">
+      <!-- <input type="text" name="distance" onkeyup="searchbyDistance()" class="form-control" id="distance" onclick="show1(),show2()" placeholder="                                                                               Km" value="<?php echo($distance);?>" onfocus=""> -->
        </div>  
         <div class="col-sm-4">
-        <input type="submit" onclick="confirmDlt()" name="delete" id="delete" value="Delete" class="btn btn-danger">
+      <!--   <input type="submit" onclick="confirmDlt()" name="delete" id="delete" value="Delete" class="btn btn-danger"> -->
        <!--  <button type="submit" class="btn btn-danger">Delete</button> -->
     </div> 
        
   
   </div>
    <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Location</strong></label>
+   <!--  <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Location</strong></label> -->
     <div class="col-sm-5">
-      <input type="text" name="location" onkeyup="searchbyLocation()" class="form-control" id="location" placeholder="" value="<?php echo($location);?>" onfocus="" onclick="show1(), show2()">
+    <!--   <input type="text" name="location" onkeyup="searchbyLocation()" class="form-control" id="location" placeholder="" value="<?php echo($location);?>" onfocus="" onclick="show1(), show2()"> -->
     </div>
 
 
@@ -707,12 +781,11 @@
               <thead>
                 <tr>
                  <!--  <th>Number</th> -->
-                  <th>Customer Id</th>
-                  <th>Customer Name</th>
-                  <th>Contact No</th>
-                  <th>Address</th>
-                  <th>Distance</th>
-                  <th>Location</th>
+                  <th>Full Name</th>
+                  <th>Email</th>
+                  <th>User Name</th>
+                  <th>User Type</th>
+                  
                
 
                   <!-- <th>Header</th> -->
@@ -756,9 +829,9 @@ if($link === false){
   
 
  $sql="SELECT 
-          c.customerid,c.customername,c.contactno,c.address,c.distance,c.location FROM
+          u.full_name,u.email,u.user_name,u.usertype FROM
 
-      customers c
+      users u
 
         
 
@@ -789,12 +862,11 @@ if($result = mysqli_query($link, $sql)){
 
                /* echo "<td><input type='text' contenteditable='false' value='" . $row['supplierid'] . "' name='id'></td>";*/
 
-                echo "<td>" . $row['customerid'] . "</td>";
-                echo "<td>" . $row['customername'] . "</td>";
-                echo "<td>" . $row['contactno'] . "</td>";
-                echo "<td>" . $row['address'] . "</td>";
-                echo "<td>" . $row['distance'] . "</td>";
-                echo "<td>" . $row['location'] . "</td>";
+                echo "<td>" . $row['full_name'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . $row['user_name'] . "</td>";
+                echo "<td>" . $row['usertype'] . "</td>";
+                
                /* echo "<td><input class='btn btn-primary' type='submit' name='update' id='update' value='Edit'></td>";*/
                 
 
@@ -863,7 +935,7 @@ function setButtons() {
 function searchbyId() {
   var input, filter, table, tr, td, i;
 
-  input = document.getElementById("customerid");
+  input = document.getElementById("supplierid");
   filter = input.value.toUpperCase();
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
@@ -882,7 +954,7 @@ function searchbyId() {
 function searchbyName() {
   var input, filter, table, tr, td, i;
 
-  input = document.getElementById("customername");
+  input = document.getElementById("suppliername");
   filter = input.value.toUpperCase();
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
@@ -988,12 +1060,11 @@ function searchbyLocation() {
     {
        rIndex=this.rowIndex;
       // console.log(rIndex);
-      document.getElementById("customerid").value=this.cells[0].innerHTML;
-      document.getElementById("customername").value=this.cells[1].innerHTML;
-      document.getElementById("contactno").value=this.cells[2].innerHTML;
-      document.getElementById("address").value=this.cells[3].innerHTML;
-      document.getElementById("distance").value=this.cells[4].innerHTML;
-      document.getElementById("location").value=this.cells[5].innerHTML;
+      document.getElementById("full_name").value=this.cells[0].innerHTML;
+      document.getElementById("email").value=this.cells[1].innerHTML;
+      document.getElementById("user_name").value=this.cells[2].innerHTML;
+      document.getElementById("usertype").value=this.cells[3].innerHTML;
+      
       enableDeleteBtn();
       enableClearBtn();
       enableUpdateBtn();
@@ -1083,7 +1154,7 @@ function show3()
 <script type="text/javascript">
 jQuery("#add").prop('disabled', true);
 
-var toValidate = jQuery('#customername, #contactno, #address, #location'),
+var toValidate = jQuery('#suppliername, #contactno, #address, #location'),
     valid = false;
 toValidate.keyup(function () {
     if (jQuery(this).val().length > 0) {
@@ -1282,25 +1353,22 @@ toValidate.keyup(function () {
      <?php 
         $db=new PDO('mysql:host=localhost;dbname=dmcashewcorner;charset=utf8mb4', 'root', '');
  
-        if(isset($_POST['supplierid'])&&($_POST['suppliername'])&&($_POST['contactno'])&&($_POST['address'])&&($_POST['distance'])&&($_POST['location']))  
+        if(isset($_POST['full_name'])&&($_POST['email'])&&($_POST['user_name'])&&($_POST['usertype']))  
         {
                                  
 
       //$value = isset($array['username']) ? $array['username'] : '';
 
-       $supplierid=$_POST["supplierid"];
-       $suppliername=$_POST["suppliername"];
-       $contactno=$_POST["contactno"];
-       $address=$_POST["address"];
-       $distance=$_POST["distance"];
-       $location=$_POST["location"];
-
+       $full_name=$_POST["full_name"];
+       $email=$_POST["email"];
+       $user_name=$_POST["user_name"];
+       $usertype=$_POST["usertype"];
      
 
     $db=new PDO('mysql:host=localhost;dbname=dmcashewcorner;charset=utf8mb4', 'root', '');
 
-    $statement=$db->prepare("INSERT INTO suppliers(sup_id,sup_name,tp_no,address,distance,location)VALUES(?,?,?,?,?,?)");
-    $statement->execute(array($supplierid,$suppliername,$contactno,$address,$distance,$location));
+    $statement=$db->prepare("INSERT INTO users(full_name,email,user_name,usertype)VALUES(?,?,?,?)");
+    $statement->execute(array($full_name,$email,$user_name,$usertype));
     $rows = $statement->rowCount();
     }
     

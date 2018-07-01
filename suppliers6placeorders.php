@@ -1,27 +1,27 @@
 <?php
-  session_start();
-  
-if (!($_SESSION['authentication']))
-{
+ session_start();
+ /*echo json_encode($_SESSION);*/
+ if (!($_SESSION['authentication']))
+ {
     //if the value was not set, you redirect the user to your login page
     header('Location:theme2.php');
     exit;
-}
-else
-{
-    $_SESSION['authentication']=false;
+  }
+  else
+  {
     //if the user did login, then you load the page normally
-}
-
+    $_SESSION['authentication']=false;
+  }
 ?>
 
 <!doctype html>
 <html lang="en">
   <head>
+    
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -33,7 +33,7 @@ else
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content=""
+    <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
@@ -57,15 +57,21 @@ else
       {
         vertical-align: right;
       }
-
-
-    
     </style>
 
     <style type="text/css">
       .nav-link {
     color: rgba(255,255,255,.75);
 }
+    </style>
+
+     <style type="text/css">
+    .border-class
+    {
+      border:thin black solid;
+      margin:20px;
+      padding:20px;
+    }
     </style>
 
     <title>Dashboard Template for Bootstrap-DM Cashew Corner</title>
@@ -86,6 +92,9 @@ else
     <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
   <body>
+
+    <!--  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top sticky-top bg-dark">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0 navbar-right" href="#">DM Cashew Corner</a>  -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4682B4;">
       <a class="navbar-brand" href="#" style="font-family: cursive;"><img src="theme2pics/food_Cashew-Nut-Seed-Fruit-512.png" height="30px" width="30px">DM Cashew Corner</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,17 +103,36 @@ else
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-       
+        <!--  <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>  -->
+        <!--   <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+        </li>  -->
+        <!--    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+        </li>  -->
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
-      <!--    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+       <!--   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
           <form class="form-inline my-2 my-lg-0 mr-lg-2">
             <div class="input-group">
               <input class="form-control" type="text" placeholder="Search for...">
               <span class="input-group-append">
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-primary" type="button" style="min-width: 40px">
                   <i class="fa fa-search"></i>
                 </button>
               </span>
@@ -113,11 +141,56 @@ else
         </form>
 
         <ul class="navbar-nav px-3 navbar-right">
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-bell"></i>
+            <span class="d-lg-none">Alerts
+              <span class="badge badge-pill badge-warning">6 New</span>
+            </span>
+           <!--  <span class="indicator text-warning d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
+            </span> -->
+          </a>
+          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
+            <h6 class="dropdown-header">New Alerts:</h6>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-danger">
+                <strong>
+                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <span class="text-success">
+                <strong>
+                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
+              </span>
+              <span class="small float-right text-muted">11:21 AM</span>
+              <div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item small" href="#">View all alerts</a>
+          </div>
+        </li>
           <li class="nav-item navbar-right">
             <a class="nav-link" href=""> 
               <?php
               echo($_SESSION['full_name']);
              $_SESSION['authentication']=true;
+
               //  echo($_SESSION['usertest']);
               //echo json_encode($_SESSION);
               // echo"thirdpage" . ($_SESSION['name']);
@@ -180,7 +253,7 @@ else
               <!-- <li class="nav-item active">
                 <a class=" nav-link" href="dashboard.php">
                   <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
+                  Dashboard
                 </a>
               </li>
                <li class="nav-item">
@@ -190,7 +263,7 @@ else
                 </a>
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="suppliers.php">
                   <span data-feather="users" ></span>
                   Suppliers
                 </a>
@@ -236,9 +309,9 @@ else
                   <span data-feather="bar-chart-2"></span>
                   Reports
                 </a>
-              </li> -->
-
-               <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
+              </li>
+              -->
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="dashboard.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
@@ -264,7 +337,7 @@ else
                 </a>
               </li> -->
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Suppliers">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="suppliers.php">
             <i class="fa fa-address-card-o"></i>
             <span class="nav-link-text">Suppliers</span>
@@ -281,7 +354,7 @@ else
 
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="customers.php">
             <i class="fa fa-group"></i>
             <span class="nav-link-text">Customers</span>
           </a>
@@ -352,29 +425,31 @@ else
                   Reports
                 </a>
               </li> -->
-         <?php
+
+        <?php
 
           if($_SESSION['userType'] == 'manager') {
            ?>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="#">
             <i class="fa fa-newspaper-o"></i>  
             <span class="nav-link-text">Reports</span>
           </a>
         </li>
 
-        <?php
+          <?php
           }
-        ?>
+          ?>
              
              
             </ul>
 
             <?php
- 
+
               if($_SESSION['userType'] == 'manager') {
            ?>
+
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Saved reports</span>
@@ -383,7 +458,7 @@ else
               </a>
             </h6>
             <ul class="nav flex-column mb-2">
-             <!--  <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
                   Current month
@@ -407,7 +482,7 @@ else
                   Year-end sale
                 </a>
               </li> -->
-               <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Current month">
+              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Current month">
           <a class="nav-link" href="#">
             <i class="fa fa-file-pdf-o"></i>  
             <span class="nav-link-text">Current month</span>
@@ -435,204 +510,404 @@ else
           </a>
         </li>
 
-        <?php
+          <?php
           }
-        ?>
+          ?>
+         
             </ul>
           </div>
 
-        <br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br>
+              
         </nav>
 
         <br><br><br><br>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <!-- <h1 class="h2">Suppliers</h1> -->
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Customers</li>
-              </ol>
+           <!--  <h1 class="h2">Please enter required details</h1> -->
+             <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+               <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+               <li class="breadcrumb-item"><a href="suppliers.php">Suppliers</a></li>
+               <li class="breadcrumb-item active" aria-current="page">Required Details</li>
+            </ol>
             </nav>
-            <br><br><br>
-
-            
-            
             <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-
-          <!--  <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button> -->
-            <!-- <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers2requiredDetails.php'" action="suppliers2requiredDetails.php">Most appropriate supplier list and Place orders</button> -->
-
-           <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='customers3handlecustomers.php'" action="customers3handlecustomers.php">Handle Customers Details</button>
-
-            <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='customers5search.php'" action="customers5search.php">Search Customers by Clues</button>
-
-          
-                  
-          
-          
-                  
-            
-              
-
-
-               <!--  <button class="btn btn-sm btn-outline-secondary">Share</button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button> -->
+             <!--  <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
               </div>
               <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
                 <span data-feather="calendar"></span>
                 This week
-              </button>
+              </button> -->
             </div>
           </div>
 
-         <!--  <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+         <!--  <canvas class="my-4" id="myChart" width="900" height="380"></canvas> -->
+
+          <!-- <?php
+
+            /* $_SESSION['sell'] = $_POST["sell"];*/
+           // $_SESSION['sell'] = $x;
+         //   echo x;
+            //  $sell = $_POST["01"];*/
+
+
+
+            ?>
  -->
-          <h1>Recent Orders</h1>
+         <form class="border-class" method="POST" name="form1" action="suppliers4appropriatelist.php">
+         
+      <style type="text/css">
+      
+      .btn{min-width:80px;}
+    </style>
 
-          <div class="table-responsive" style="overflow-y: auto;height: 250px">
-            <table id="table" class="table table-bordered table-hover  table-sm"  >
-              <thead>
-                <tr>
-                 <!--  <th>Number</th> -->
-                  <th>Order No</th>
-                  <th>Date</th>
-                  <th>Total Cost</th>
-                  <th>Invoice No</th>
-                 
-                  <th>Status</th>
-               
+  <P>Please enter required details</P>
 
-                  <!-- <th>Header</th> -->
-                </tr>
-              </thead>
-              <tbody height:"40px" overflow-y:"scroll">
-                <tr>
- 
-
-       <style>
-body {
-   body {
-    /* Set "my-sec-counter" to 0 */
-    counter-reset: my-sec-counter;
-}
-
-tr::before {
-    /* Increment "my-sec-counter" by 1 */
-    counter-increment: my-sec-counter;
-    content: "Section " counter(my-sec-counter) ". ";
-} 
-}
-
-</style>
-
-<?php
-
-  $mysqli=new mysqli("localhost","root","","dmcashewcorner");
-
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "dmcashewcorner");
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+  <div class="form-group row col-md-12 ml-md">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Date</strong></label>
+    
+     <div class="col-sm-4 form-group">
+       <input type="text" name="suppliername" class="form-control" id="inputPassword3" placeholder="                                      ">
+   
+         
+     
+    </div>
 
 
+
+
+<!--  -->
+
+    <div class="col-sm-1">
+    <!--   <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Quantity</strong></label> -->
+    </div>
+
+
+    <div class="col-sm-2">
+         <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Order No</strong></label>
+    </div>
+
+    <div class="col-sm-3">
+       <input type="text" name="suppliername" class="form-control" id="inputPassword3" placeholder="                                      ">
+
+    </div>
+
+
+
+
+    <?php /*echo $row ['supplier_id'];*/ ?>
+    
+    <!-- <div class="col-sm-4">
+        <button type="submit" name="submit" class="btn btn-primary btn-md">Add</button>
+    </div> 
+  -->
+  </div>
+  <!-- <div class="form-group row col-md-12 ml-md-auto"> -->
+    <!-- <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>Quantity</strong></label> -->
+   <!--  <div class="col-sm-5"> -->
+     <!--  <input type="text" name="suppliername" class="form-control" id="inputPassword3" placeholder="                                                                          Kg">
+ -->
+<!-- 
+    </div> -->
+  <!--   <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div> 
+ -->
+
+ <!--  </div> -->
+   <div class="form-group row col-md-12 ml-md">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Order Name</strong></label>
+    <div class="col-sm-4">
+      <input type="text" name="contactno" class="form-control" id="inputEmail3" placeholder="                                                      ">
+    </div>
+      <!-- <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">View</button>
+    </div> 
+ -->
+   <div class="col-sm-1">
+    <!--   <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Quantity</strong></label> -->
+    </div>
+
+
+    <div class="col-sm-2">
+         <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Item Name</strong></label>
+    </div>
+
+
+        <div class="col-sm-3 form-group">
+     <!--  <label for="sel1">Select list (select one):</label> -->
+       <input type="text" name="suppliername" class="form-control" id="inputPassword3" placeholder="                                      ">
+    </div>
+
+   <!--  <div class="col-sm-3">
+       <input type="text" name="suppliername" class="form-control" id="inputPassword3" placeholder="                                      Kg">
+
+    </div> -->
+
+  </div>
+  <!--  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Season</strong></label>
+    <div class="col-sm-5">
+       <input type="text" name="address" class="form-control" id="inputEmail3" placeholder=""> 
+
+     
+    </div> -->
+
+  <!-- <div class="form-group row col-md-12 ml-md-auto">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Season</strong></label>
+    <!-- <div class="col-sm-5"> -->
+      <!-- <input type="text" name="supplierid" class="form-control" id="inputEmail3" placeholder="" value="" > -->
+
+
+      <!--   <div class="col-sm-5 form-group"> -->
+     <!--  <label for="sel1">Select list (select one):</label> -->
+     <!--  <select class="form-control" id="sel1">
+        <option>Season</option>
+        <option>Off</option>
+        
+      </select>
+    </div> -->
+
+      <!--  <div class="col-sm-4">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div> 
+ -->
+  <!-- </div> --> 
+  <!--  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Payment Method</strong></label>
+    <div class="col-sm-5">
+      <input type="text" name="distance" class="form-control" id="inputEmail3" placeholder="">
+    </div> -->
+
+
+  <div class="form-group row col-md-12 ml-md">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Invoice No</strong></label>
+    <!-- <div class="col-sm-5"> -->
+      <!-- <input type="text" name="supplierid" class="form-control" id="inputEmail3" placeholder="" value="" > -->
+
+
+        <div class="col-sm-4 form-group">
+           <input type="text" name="contactno" class="form-control" id="inputEmail3" placeholder="" />
+    </div>
+
+    <div class="col-sm-1">
+    <!--   <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Quantity</strong></label> -->
+    </div>
+
+
+    <div class="col-sm-2">
+         <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Quantity</strong></label>
+    </div>
+
+    <div class="col-sm-3">
+       <input type="text" name="suppliername" class="form-control" id="inputPassword3" placeholder="                                     ">
+
+    </div>
+
+  </div>
+  <!--  <div class="form-group row col-md-12 ml-md-auto">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Distance</strong></label>
+    <div class="col-sm-5">
+      <input type="text" name="location" class="form-control" id="inputEmail3" placeholder="                                                                         Km">
+    </div>
+  </div> -->
+ <!--  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Delivery Method</strong></label>
+    <div class="col-sm-5">
+      <input type="text" name="location" class="form-control" id="inputEmail3" placeholder="">
+    </div -->
+    <div class="form-group row col-md-12 ml-md">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Payment Method</strong></label>
+    <!-- <div class="col-sm-5"> -->
+      <!-- <input type="text" name="supplierid" class="form-control" id="inputEmail3" placeholder="" value="" > -->
+
+
+        <div class="col-sm-4 form-group">
+     <!--  <label for="sel1">Select list (select one):</label> -->
+      <select class="form-control" id="sel1">
+        <option>Delivery by Supplier</option>
+        <option>by Company Vehicles</option>
+      
+      </select>
+  </div>
+
+
+    <div class="col-sm-1">
+    <!--   <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Quantity</strong></label> -->
+    </div>
+
+
+    <div class="col-sm-2">
+         <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Delivery Cost</strong></label>
+    </div>
+
+    <div class="col-sm-3">
+
+      <input type="text" name="suppliername" class="form-control" id="inputPassword3" placeholder="                                    (Rs)">
+    </div>
+</div>
+   <!-- <div class="form-group row col-md-12 ml-md-auto">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Delivery Cost</strong></label>
+    <div class="col-sm-5">
+      <input type="text" name="location" class="form-control" id="inputEmail3" placeholder="                                                                         (Rs)">
+    </div>
+  </div> -->
+   <div class="form-group row col-md-12 ml-md">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Delivery Time</strong></label>
+    <div class="col-sm-4">
+      <input type="text" name="location" class="form-control" id="inputEmail3" placeholder="                                                        Hr">
+    </div>
+    <!--  <div class="col-sm-1">
+      <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Quantity</strong></label>
+    </div> -->
+
+
+    <!-- <div class="col-sm-4">
+         <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Time to receive</strong></label>
+    </div>
+
+    <div class="col-sm-3">
+       <input type="text" name="suppliername" class="form-control" id="inputPassword3" placeholder="                                    (Rs)">
+
+    </div> -->
+  </div>
+  <div class="form-group row col-md-12 ml-md">
+    <label for="inputEmail3" class="col-sm-3 col-form-label"><strong>Delivery Method</strong></label>
+    <div class="col-sm-3">
+      <input type="text" name="location" class="form-control" id="inputEmail3" placeholder="                               (Rs)">
+    </div>
+  </div>
+
+ <!--  <button type="button" class="btn btn-primary active">Submit</button>
+  <button type="button" class="btn btn-primary active">Cancel</button> -->
 
   
 
- $sql="SELECT 
-          so.sorder_no,so.date,so.total_price,so.invoice_no,so.status FROM
-
-      salesorders so
-
-        
-
-         "; 
-
-
-
-
-if($result = mysqli_query($link, $sql)){
-    if(mysqli_num_rows($result) > 0){
-        
-            echo "<form method='post'>";
-        while($row = mysqli_fetch_array($result)){
-            echo "<tr>";
-               /* echo "<td>" . $row['counter-increment: my-sec-counter; content: "Section " counter(my-sec-counter) ". ";'] . "</td>";*/
-              /*  echo "<td><input type='text' value='" . $row['supplierid'] . "' name='supplierid' id='supplierid'></td>";
-                echo "<td><input type='text' value='" . $row['suppliername'] . "' name='suppliername' id='suppliername'></td>";
-                echo "<td><input type='text' value='" . $row['contactno'] . "' name='contactno' id='contactno'></td>";
-                echo "<td><input type='text' value='" . $row['address'] . "' name='address' id='address'></td>";
-                echo "<td><input type='text' value='" . $row['distance'] . "' name='distance' id='distance'></td>";
-                echo "<td><input type='text' value='" . $row['location'] . "' name='location' id='location'</td>";
-                echo "<td><input class='btn btn-primary' type='submit' name='update' id='update' value='Edit'></td>";
-*/
-               /*  type="submit" name="update" id="update" value="Update" disabled="disabled" class="btn btn-primary
-*/
-
-               /* class="btn btn-primary"*/
-
-               /* echo "<td><input type='text' contenteditable='false' value='" . $row['supplierid'] . "' name='id'></td>";*/
-
-                echo "<td>" . $row['sorder_no'] . "</td>";
-                echo "<td>" . $row['date'] . "</td>";
-                echo "<td>" . $row['total_price'] . "</td>";
-                echo "<td>" . $row['invoice_no'] . "</td>";
-                 echo "<td>" . $row['status'] . "</td>";
-              /*  echo "<td>" . $row['distance'] . "</td>";
-                echo "<td>" . $row['location'] . "</td>";*/
-               /* echo "<td><input class='btn btn-primary' type='submit' name='update' id='update' value='Edit'></td>";*/
-                
-
-            echo "</tr>";
-        }
-
-        echo"</form>";
-
-      
-
-
-
-        echo "</table>";
-
-       
-        // Close result set
-        mysqli_free_result($result);
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
+  <!-- <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers2requiredDetails.php'" action="suppliers2requiredDetails.php">Most appropriate supplier list and Place orders</button> -->
+  <div class="col-md-3 ml-md-auto">
+        <input type="submit" name="Submit" value="Submit" class="btn btn-primary" onclick="document.location.href='suppliers4appropriatelist.php'" >
+       <!--  <button type="submit" class="btn btn-primary">Update</button> -->
  
-// Close connection
-mysqli_close($link);
-?>
-</tr>
 
-</tbody>          
+     <input type="submit" name="insert" value="Cancel" class="btn btn-primary btn-md">
 
+   <!--  <input type=button onClick="location.href='suppliers.php'" value='Next'> -->
+    <!-- <li class="breadcrumb-item"><a href="suppliers4appropriatelist.php">Dashboard</a></li>
+     <button class="btn btn-md btn-primary" type="submit" onclick="location.href='suppliers4appropriatelist.php'" action="suppliers4appropriatelist.php"><a href="suppliers4appropriatelist.php">Dashboard</a></button> -->
+    <!--  <button class="btn btn-md btn-primary" type="submit" onclick="location.href='suppliers.php'" action="suppliers.php" method="post">SUBMIT</butto -->
 
+<!-- ************************************************************************************************************ -->
+<!-- 
+     <button id="myButton" class="float-left submit-button" >Home</button>
 
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "suppliers4appropriatelist.php";
+    };
+</script> -->
 
-         <!--  <h2>Recent Orders</h2
+<!-- ******************************************************************************************************** -->
+
+      <!-- <button class="btn btn-primary" type="submit" name="submit" action="suppliers4appropriatelist.php">Sign Up</button> -->
+<!--  <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers3handleSuppl.php'" action="suppliers3handleSuppliers.php">Handle Supplier Details</button>   suppliers4appropriatelist
           
+                  
+   <input type="submit" onClick="document.location.href='suppliers4appropriatelist.php'" name="insert" value="Submit" class="btn btn-primary btn-md"> 
+   <input type="submit" name="insert" value="Cancel" class="btn btn-primary btn-md"> -->
+   </div>
+    <!-- <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Delivery Cost</strong></label>
+    <div class="col-sm-5">
+      <input type="text" name="location" class="form-control" id="inputEmail3" placeholder="">
+    </div>
+      <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Time to receive</strong></label>
+    <div class="col-sm-5">
+      <input type="text" name="location" class="form-control" id="inputEmail3" placeholder="">
+    </div>
+      <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Average cost per Unit</strong></label>
+    <div class="col-sm-5">
+      <input type="text" name="location" class="form-control" id="inputEmail3" placeholder="">
+    </div>
+     -->
 
+
+
+
+
+
+
+  <!-- <div class="btn-group-vertical">
+  <button type="button" class="btn btn-outline-primary">Apple</button>
+  <button type="button" class="btn btn-outline-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button> -->
+</div>
+<!--   <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            First radio
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+            Second radio
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+          <label class="form-check-label" for="gridRadios3">
+            Third disabled radio
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset> -->
+<!--   <div class="form-group row">
+    <div class="col-sm-2">Checkbox</div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+
+          Example checkbox
+        </label>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </div> -->
+
+  
+
+</form>
+
+         
+
+ 
+
+         <!--  <h2>Section title</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
-                  <th>Order No</th>
-                  <th>Date</th>
-                  <th>Cashew Type</th>
-                  <th>Unit Cost</th>
-                  <th>Supplier Name</th>
-                  <th>Status</th>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
                 </tr>
               </thead>
               <tbody>
@@ -748,9 +1023,9 @@ mysqli_close($link);
                   <td>in</td>
                   <td>libero</td>
                 </tr>
-              </tbody> -->
+              </tbody>
             </table>
-          </div>
+          </div> -->
         </main>
       </div>
     </div>
@@ -769,11 +1044,11 @@ mysqli_close($link);
           <div class="modal-body">Are you sure you want to logout?</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-             <!-- <button class="btn btn-outline-success btn-primary" data-target="#loginModal" data-toggle="modal" data-dismiss="modal">Logout</button> -->
-            <!--  <button class="btn btn-outline-primary" data-target="#loginModal" data-dismiss="modal" data-toggle="modal">Logout</button>
-               -->
+             <!--  <button class="btn btn-outline-success btn-primary" data-target="#loginModal" data-toggle="modal" data-dismiss="modal">Logout</button>  -->
+             <!--   <button class="btn btn-outline-primary" data-target="#loginModal" data-dismiss="modal" data-toggle="modal">Logout</button> -->
 
-                 <button class="btn btn-outline-primary" type="submit" data-target="#loginModal" onclick="document.location.href='logout.php'">Logout</button>
+
+               <button class="btn btn-outline-primary" type="submit" data-target="#loginModal" onclick="document.location.href='logout.php'">Logout</button>
               
 
               
@@ -874,14 +1149,6 @@ mysqli_close($link);
   </div>
   </div>
 
-
-
-            <button class="btn btn-primary" type="submit" id="loginbtn" name="submit">Login</button>
-          <!--  <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button> -->
-            <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">Create an Account</button>
-            <!--  <button class="btn btn-primary" type="submit" name="submit">Sign Up</button> -->
-              
-
   
 
 
@@ -903,14 +1170,12 @@ mysqli_close($link);
       feather.replace()
     </script>
 
-
-
-
-
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
-      var ctx = document.getElementById("myChart");
+      <p>iqdiheihrifwiwiji
+      <h1>\sfesfs<
+      /*var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -935,15 +1200,28 @@ mysqli_close($link);
           legend: {
             display: false,
           }
-        }
-      });
+        }*/
+      }
     </script>
-<?php
-   $_SESSION['authentication']=true;
+
+    <?php
+    /*$_
+    ['authentication']=true;*/
+    ?>
+
+    <?php
+ $_SESSION['authentication']=true;
     ?>
 
 
-  
 
   </body>
 </html>
+
+
+  <!--   <?php
+  /* $_SESSION['authentication']=true;*/
+    ?> -->
+
+
+

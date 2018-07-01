@@ -233,7 +233,8 @@ table#t01 {
           <li class="nav-item navbar-right">
             <a class="nav-link" href=""> 
               <?php
-              echo($_SESSION['full_name']);
+              /*echo($_SESSION['full_name']);*/
+              echo "Admin";
               //  echo($_SESSION['usertest']);
               //echo json_encode($_SESSION);
               // echo"thirdpage" . ($_SESSION['name']);
@@ -285,6 +286,8 @@ table#t01 {
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>  -->
+
+
 
    
 
@@ -360,12 +363,7 @@ table#t01 {
             <span class="nav-link-text">Dashboard</span>
           </a>
          </li>
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="monitor"></span>
-                  About
-                </a>
-              </li> -->
+             
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="About">
           <a class="nav-link" href="#">
             <i class="fa fa-info-circle"></i>
@@ -373,43 +371,26 @@ table#t01 {
           </a>
         </li>
 
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="suppliers.php">
-                  <span data-feather="users" ></span>
-                  Suppliers
-                </a>
-              </li> -->
+           
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Suppliers">
           <a class="nav-link" href="suppliers.php">
             <i class="fa fa-address-card-o"></i>
-            <span class="nav-link-text">Suppliers</span>
+            <span class="nav-link-text">Setting</span>
           </a>
         </li>
 
 
-             <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="user"></span>
-                  Customers
-                </a>
-              </li> -->
+           
 
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
+      <!--   <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="customers.php">
             <i class="fa fa-group"></i>
             <span class="nav-link-text">Customers</span>
           </a>
         </li>
 
-            <!-- 
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="book"></span>
-                  Employee Duties
-                </a>
-              </li> -->
+           
              
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Employee Duties">
           <a class="nav-link" href="#">
@@ -419,13 +400,7 @@ table#t01 {
         </li>
 
 
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="dollar-sign"></span>
-                  Payroll
-                </a>
-              </li>
-               -->
+           
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Payroll">
           <a class="nav-link" href="#">
@@ -434,12 +409,7 @@ table#t01 {
           </a>
         </li>
 
-           <!-- <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-                </a>
-              </li> -->
+          
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
           <a class="nav-link" href="#">
@@ -448,12 +418,7 @@ table#t01 {
           </a>
         </li>
 
-            <!--   <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-                </a>
-              </li> -->
+           
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
           <a class="nav-link" href="#">
@@ -462,38 +427,15 @@ table#t01 {
           </a>
         </li>
               
-            <!--   <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li> -->
-
-        <?php
-
-          if($_SESSION['userType'] == 'manager') {
-           ?>
-
+           
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title=Reports>
           <a class="nav-link" href="#">
             <i class="fa fa-newspaper-o"></i>  
             <span class="nav-link-text">Reports</span>
           </a>
         </li>
-
-        
-
-        <?php
-          }
-          ?>
-            
              
             </ul>
-
-          <?php
-
-            if($_SESSION['userType'] == 'manager') {
-           ?>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Saved reports</span>
@@ -502,67 +444,10 @@ table#t01 {
               </a>
             </h6>
             <ul class="nav flex-column mb-2">
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
-                </a>
-              </li> -->
-              <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Current month">
-          <a class="nav-link" href="#">
-            <i class="fa fa-file-pdf-o"></i>  
-            <span class="nav-link-text">Current month</span>
-          </a>
-        </li>
-
-         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Last quarter">
-          <a class="nav-link" href="#">
-            <i class="fa fa-file-pdf-o"></i>  
-            <span class="nav-link-text">Last quarter</span>
-          </a>
-        </li>
-         
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Social engagement">
-          <a class="nav-link" href="#">
-            <i class="fa fa-file-pdf-o"></i>  
-            <span class="nav-link-text">Social engagement</span>
-          </a>
-        </li>
-         
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Year-end sale">
-          <a class="nav-link" href="#">
-            <i class="fa fa-file-pdf-o"></i>  
-            <span class="nav-link-text">Year-end sale</span>
-          </a>
-        </li>
-
-        <?php
-          }
-          ?>
-         
+              
+          -->
             </ul>
           </div>
-
-          
-        <br><br><br><br><br><br><br><br><br><br>
         </nav>
 
         <br><br><br><br>
@@ -573,8 +458,8 @@ table#t01 {
             <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-    <li class="breadcrumb-item"><a href="suppliers.php">Suppliers</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Search Suppliers by Clues</li>
+    <!-- <li class="breadcrumb-item"><a href="suppliers.php">Suppliers</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Search Suppliers by Clues</li> -->
   </ol>
 </nav>
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -588,6 +473,13 @@ table#t01 {
               </button> -->
             </div>
           </div>
+          
+           <div class="btn-group mr-2">
+              <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">Create an Account</button>
+              <!--  <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">View Users</button> -->
+               <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='adminviewusers.php'" action="adminviewusers.php">View Users</button>
+            </div>
+
 
          <!--  <canvas class="my-4" id="myChart" width="900" height="380"></canvas> -->
 
@@ -806,25 +698,21 @@ table#t01 {
 
 
   
-
-  <form class="border-class" method="post" action="suppliers3handleSuppliers.php">
+<!-- <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">Create an Account</button>
+ -->  <form class="border-class" method="post" action="">
     
       <style type="text/css">
       
-      .btn{min-width:90px;}
+      .btn{min-width:150px;}
     </style>
 
   <div class="form-group row">
-    <!-- <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Search by</strong></label>
- -->
-     <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Search By</strong></label>
-    <!-- <div class="col-sm-5"> -->
-      <!-- <input type="text" name="supplierid" class="form-control" id="inputEmail3" placeholder="" value="" > -->
-
-
+    
+   <!--   <label for="inputEmail3" class="col-sm-2 col-form-label"><strong>Search By</strong></label> -->
+ 
      <div class="col-sm-4 form-group">
-     <!--  <label for="sel1">Select list (select one):</label> -->
-      <select class="form-control" id="sel1">
+    
+    <!--   <select class="form-control" id="sel1">
         <option>Order No</option>
         <option>Supplier Name</option>
         <option>Phone No</option>
@@ -835,24 +723,30 @@ table#t01 {
         <option>Last Order Amount</option>
         
 
-      </select>
-    </div>
-    <!-- <div class="col-sm-5">
-      <input type="number" name="supplierid" class="form-control" id="inputEmail3" placeholder="" value="<?php echo($supplierid);?>" >
-    </div> -->
+      </select> -->
+      
+     <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">Create an Account</button>
 
-   <!--   <button class="btn btn-md btn-primary" type="submit" onClick="window.location.href='suppliers4appropriatelist.php'" action="suppliers4appropriatelist.php">SUBMIT</button>
- -->
+   <!--   <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">View Users</button> -->
+
+    <!--   <input type="submit" name="Submit" value="Sign Up" class="btn btn-primary" data-target="#signupModal" onclick="document.location.href='signupModal'" >
+
+       <input type="submit" name="insert" id="add" value="Add" onclick="#signupModal" class="btn btn-primary btn-md">
+       -->
+      
+    </div>
+    <div>
+    
+    </div>
+    
     <?php /*echo $row ['supplier_id'];*/ ?>
     
     <div class="col-sm-4">
-        <!--  <input type="submit" name="insert" value="Add" class="btn btn-primary btn-md"> -->
-       <!--  <button type="submit" name="submit" class="btn btn-primary btn-md">Add</button> -->
+       <!-- -  <button type="submit" name="submit" class="btn btn-primary btn-md">Add</button> --> 
    
     <!-- Example split danger button -->
 <div class="btn-group col-sm-4">
-  <!-- <button type="button" class="btn btn-primary">Search by</button> -->
-  <!-- <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="min-width: 40px"> -->
+ 
     <span class="sr-only">Toggle Dropdown</span>
   </button>
   <div class="dropdown-menu">
@@ -867,12 +761,12 @@ table#t01 {
  
   </div>
   <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>Enter Value</strong></label>
+   <!--  <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>Enter Value</strong></label> -->
     <div class="col-sm-5">
-      <input type="text" name="entervalue" class="form-control" id="entervalue" placeholder="" value="<?php echo($suppliername);?>">
+      <!-- <input type="text" name="entervalue" class="form-control" id="entervalue" placeholder="" value="<?php echo($suppliername);?>"> -->
     </div>
     <div class="col-sm-4">
-        <input type="submit" name="Search" value="Search" class="btn btn-primary">
+       <!--  <input type="submit" name="Search" value="Search" class="btn btn-primary"> -->
        <!--  <button type="submit" class="btn btn-primary">Update</button> -->
        <!-- <button class="btn btn-primary" type="submit" name="submit" action="suppliers5search.php">Create</button -->
     </div> 
@@ -882,10 +776,10 @@ table#t01 {
 
      <div class="table-responsive" style="overflow-y: auto;height: 250px">
             <table class="table  table-sm">
-              <thead>
+             <!--  <thead>
                 <tr>
-                 <!--  <th>Number</th> -->
-                  <th>Supplier Id</th>
+                  <th>Number</th> -->
+                 <!--  <th>Supplier Id</th>
                   <th>Supplier Name</th>
                   <th>Telephone No</th>
                   <th>Last Order Name</th>
@@ -893,11 +787,11 @@ table#t01 {
                   <th>Last Order Amount</th>
                   <th>Location</th>
                   <th>Address</th>
-                  <th>Distance</th>
+                  <th>Distance</th> -->
 
                   <!-- <th>Header</th> -->
                 </tr>
-              </thead>
+              </thead> 
               <tbody>
                 <tr>
 
@@ -918,33 +812,7 @@ tr::before {
 
 </style>
 
- <?php 
-        $db=new PDO('mysql:host=localhost;dbname=dmcashewcorner;charset=utf8mb4', 'root', '');
- 
-        if(isset($_POST['username']))  
-        {
-                                 
 
-      //$value = isset($array['username']) ? $array['username'] : '';
-
-
-       $entervalue=$_POST["entervalue"];
-       /*$passWord=$_POST["password"];
-       $fullName=$_POST["fullname"];
-      $eMail=$_POST["email"];
-*/
-    /*  $md5pass=md5($passWord);
-      $sha1pass=sha1($md5pass);
-      $cryptpass=crypt($sha1pass,st); 
-*/
-    $db=new PDO('mysql:host=localhost;dbname=dmcashewcorner;charset=utf8mb4', 'root', '');
-
-    $statement=$db->prepare("INSERT INTO users(user_name,password,full_name,email)VALUES(?,?,?,?)");
-    $statement->execute(array($userName,$cryptpass,$fullName,$eMail));
-    $rows = $statement->rowCount();
-    }
-    
-    ?>
 
 <?php
 
@@ -1013,7 +881,7 @@ if($result = mysqli_query($link, $sql)){
 
                /* echo "<td><input type='text' contenteditable='false' value='" . $row['supplierid'] . "' name='id'></td>";*/
 
-                echo "<td>" . $row['supplierid'] . "</td>";
+               /* echo "<td>" . $row['supplierid'] . "</td>";
                 echo "<td>" . $row['suppliername'] . "</td>";
                 echo "<td>" . $row['contactno'] . "</td>";
                 echo "<td>" . $row['order_name'] . "</td>";
@@ -1021,7 +889,7 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['quantity'] . "</td>";
                 echo "<td>" . $row['location'] . "</td>";
                 echo "<td>" . $row['address'] . "</td>";
-                echo "<td>" . $row['distance'] . "</td>";
+                echo "<td>" . $row['distance'] . "</td>";*/
                /* echo "<td><input class='btn btn-primary' type='submit' name='update' id='update' value='Edit'></td>";*/
                 
 
@@ -1034,7 +902,7 @@ if($result = mysqli_query($link, $sql)){
 
 
 
-        echo "</table>";
+       /* echo "</table>";*/
 
         // Close result set
         mysqli_free_result($result);
@@ -1705,6 +1573,119 @@ mysqli_close($link);
       }
     </script>
 
+
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color: #17a2b8">
+            <h4 class="modal-title">Create Accounts</h4>
+            <button class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+         
+
+          <div class="modal-body" style="height: 450px; overflow-y: auto;">
+
+            <form class="form-signin" method="post">
+
+             <!--  <div class="form-group">
+                <label for="inputUserName"><strong>This field is only for staff members</strong></label>
+              </div> -->
+      
+              <div class="form-group">
+                 <div class="required">
+                <label for="fullName">Name</label>
+              </div>
+                <input type="text" name="fullname" class="form-control" placeholder="Full Name"  required />
+              </div>
+
+              <div class="form-group">
+                 <div class="required">
+                <label for="eMail">Email</label>
+              </div>
+                <input type="email"  name="email" class="form-control" placeholder="Email address" required />
+              </div>
+
+              <div class="form-group">
+                 <div class="required">
+                <label for="eMail">Account Type</label>
+              </div class="col-sm-4 form-group">
+                <!-- <input type="email"  name="email" class="form-control" placeholder="Type" required /> -->
+                 <select class="form-control" id="userType" name="userType">
+        <option value="admin">Administrator</option>
+        <option value="manager">Manager</option>
+        <option value="sales person">Sales Person</option>
+        
+      </select>
+              </div>
+
+             
+
+
+
+              <div class="form-group">
+                 <div class="required">
+                <label for="inputUserName">User Name</label>
+                 </div>
+                <input type="text" name="username" class="form-control" placeholder="User Name"  required="" />
+              </div>
+
+              
+      <script type="text/javascript"> 
+        var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+</script>  
+
+ <div class="form-group">
+                 <div class="required">
+                <label for="inputPassword">Password</label>
+              </div> 
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password"  required="" onkeyup='check();' />
+                <!--<span class="help-block">Strong Password</span> -->
+              <div>
+          </div>
+        </div>
+   
+
+     <div class="form-group">
+                 <div class="required">
+                <label for="inputPassword">Password Confirm</label>
+              </div>
+                <input type="password" name="confirm_password" id="confirm_password" class="form-control" placeholder="Password Confirm"  required="" onkeyup='check();'  />
+
+                 <span id='message'></span>
+                
+                <!--<span class="help-block">Strong Password</span> -->
+              <div>
+               
+          </div>
+        </div>
+             </div>
+
+          <div class="modal-footer"><button class="btn btn-primary" type="submit" name="submit" action="signupsuccess.php">Create</button>
+            <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button>
+
+
+ <!-- <div class="modal-footer">" type="submit" name="submit" action="signupsuccess.php">Sign Up</button>
+              -->
+</div>
+
+ </div>
+
+      
+ 
+            </form>
+
+
+
      <?php 
         $db=new PDO('mysql:host=localhost;dbname=dmcashewcorner;charset=utf8mb4', 'root', '');
  
@@ -1731,6 +1712,46 @@ mysqli_close($link);
     }
     
     ?>
+
+     <?php 
+        $db=new PDO('mysql:host=localhost;dbname=dmcashewcorner;charset=utf8mb4', 'root', '');
+ 
+        if(isset($_POST['username'])&&($_POST['password'])&&($_POST['fullname'])&&($_POST['email'])&&($_POST['userType']))  
+        {
+                                 
+
+      //$value = isset($array['username']) ? $array['username'] : '';
+
+
+       $userName=$_POST["username"];
+       $passWord=$_POST["password"];
+       $fullName=$_POST["fullname"];
+       $eMail=$_POST["email"];
+       $userType=$_POST["userType"];
+
+      $md5pass=md5($passWord);
+      $sha1pass=sha1($md5pass);
+      $cryptpass=crypt($sha1pass,st); 
+
+    $db=new PDO('mysql:host=localhost;dbname=dmcashewcorner;charset=utf8mb4', 'root', '');
+
+    $statement=$db->prepare("INSERT INTO users(user_name,password,full_name,email,userType)VALUES(?,?,?,?,?)");
+    $statement->execute(array($userName,$cryptpass,$fullName,$eMail,$userType));
+    $rows = $statement->rowCount();
+    }
+    
+    ?>
+
+    <?php
+    $_SESSION['authenticated']=true; 
+    ?>
+  
+
+
+
+
+
+
 
     <?php
     $_SESSION['authentication']=true;

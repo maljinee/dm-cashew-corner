@@ -100,6 +100,8 @@
   </head>
 
   <body>
+
+
   
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4682B4;">
       <a class="navbar-brand" href="#" style="font-family: cursive;"><img src="theme2pics/food_Cashew-Nut-Seed-Fruit-512.png" height="30px" width="30px">DM Cashew Corner</a>
@@ -385,14 +387,22 @@
 
 
 
+       <?php
 
+          if($_SESSION['userType'] == 'manager') {
+        ?>
 
-        <li class="nav-item text-muted disabled" data-toggle="tooltip" data-placement="right" title="Reports" disabled="disabled">
+        <li class="nav-item text-muted disabled" data-toggle="tooltip" data-placement="right" title="Reports">
           <a class="nav-link" href="#">
             <i class="fa fa-newspaper-o disabled text-muted"></i>  
             <span class="disabled text-muted" id="reports" class="nav-link-text">Reports</span>
           </a>
         </li>
+
+           <?php
+          }
+          ?>
+       
              
             </ul>
 
@@ -402,42 +412,18 @@
             ?>
            
         
-  <script type="text/javascript">
+  
 
-
-
-    var uname = <?=json_encode($user);?>;
-    
-  echo "$uname";
-
-    $_POST['full_name']=$user;
-
-    echo "$user";
-
-              
-
-       
-       
       
+        <?php
 
-
-
-        if(
-        (full_name)=="W.D.M.S.Dayananda"){
-          disabl();
-        }
-
-         
-
-         function disabl() {
-       if (document.getElementById("reports").hidden == true){
-         document.getElementById("reports").hidden = false;
-    }
-      </script> 
-        
+          if($_SESSION['userType'] == 'manager') {
+        ?>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+             
               <span>Saved reports</span>
+              
               <a class="d-flex align-items-center text-muted" href="#">
                 <span data-feather="plus-circle"></span>
               </a>
@@ -470,6 +456,10 @@
             <span class="nav-link-text">Year-end sale</span>
           </a>
         </li>
+
+        <?php
+}
+?>
          
              <!--  <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -984,7 +974,7 @@
        $userName=$_POST["username"];
        $passWord=$_POST["password"];
        $fullName=$_POST["fullname"];
-      $eMail=$_POST["email"];
+       $eMail=$_POST["email"];
 
       $md5pass=md5($passWord);
       $sha1pass=sha1($md5pass);

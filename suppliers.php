@@ -174,7 +174,7 @@ else
 
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-dark nav-link sidebar navbar-dark bg-dark">
+        <nav class="col-md-2 d-none d-md-block bg-dark nav-link sidebar navbar-dark bg-dark style="background-color: #4682B4;" >
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <!-- <li class="nav-item active">
@@ -353,15 +353,30 @@ else
                 </a>
               </li> -->
 
+
+          <?php
+
+          if($_SESSION['userType'] == 'manager') {
+           ?>
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports">
           <a class="nav-link" href="#">
             <i class="fa fa-newspaper-o"></i>  
             <span class="nav-link-text">Reports</span>
           </a>
         </li>
+
+          <?php
+          }
+          ?>
              
              
             </ul>
+            
+            <?php
+
+            if($_SESSION['userType'] == 'manager') {
+            ?>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Saved reports</span>
@@ -369,6 +384,8 @@ else
                 <span data-feather="plus-circle"></span>
               </a>
             </h6>
+
+
             <ul class="nav flex-column mb-2">
              <!--  <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -421,8 +438,18 @@ else
             <span class="nav-link-text">Year-end sale</span>
           </a>
         </li>
+
+          <?php
+          }
+          ?>
             </ul>
+
+          <br><br><br>
           </div>
+            
+
+        <br><br><br><br><br><br><br><br><br><br>
+              
         </nav>
 
         <br><br><br><br>
@@ -732,6 +759,11 @@ mysqli_close($link);
               </tbody> -->
             </table>
           </div>
+
+          <div class="col-sm-4" action="suppliers6placeorders.php">
+            <input type="submit" name="search" value="Place a Order" id="search" onClick="document.location.href='suppliers6placeorders.php'"  class="btn btn-primary">
+            <!--   <button type="submit" class="btn btn-primary">View</button> -->
+          </div> 
         </main>
       </div>
     </div>
@@ -857,13 +889,7 @@ mysqli_close($link);
 
 
 
-            <button class="btn btn-primary" type="submit" id="loginbtn" name="submit">Login</button>
-          <!--  <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button> -->
-            <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">Create an Account</button>
-            <!--  <button class="btn btn-primary" type="submit" name="submit">Sign Up</button> -->
-              
-
-  
+            
 
 
 
