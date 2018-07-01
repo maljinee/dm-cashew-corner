@@ -1,26 +1,6 @@
 <?php
 
-echo $_POST["sell"];
-echo "<br>";
-echo  $_POST['averageCostPerUnit'];
-echo "<br>";
-echo $_POST['quantity'];
-echo "<br>";
-echo   $_POST['costPerUnit'];
-echo "<br>";
-echo   $_POST['season'];
-echo "<br>";
-echo   $_POST['paymentMethod'];
-echo "<br>";
-echo   $_POST['distance'];
-echo "<br>";
-echo   $_POST['deliveryMethod'];
-echo "<br>";
-echo   $_POST['deliveryCost'];
-echo "<br>";
-echo   $_POST['timeToReceive'];
-//var_dump($_POST);
-die();
+
 
 
  session_start();
@@ -159,8 +139,6 @@ tr:hover::after,
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
-      <!--    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
           <form class="form-inline my-2 my-lg-0 mr-lg-2">
             <div class="input-group">
               <input class="form-control" type="text" placeholder="Search for...">
@@ -179,11 +157,7 @@ tr:hover::after,
               <?php
               echo($_SESSION['full_name']);
              $_SESSION['authentication']=true;
-              //  echo($_SESSION['usertest']);
-              //echo json_encode($_SESSION);
-              // echo"thirdpage" . ($_SESSION['name']);
-              // echo ($_SESSION['username1']);
-              // $username1=$_REQUEST["username1"];
+
               ?>
             </a>
           </li>
@@ -197,39 +171,7 @@ tr:hover::after,
 
 
   
-    <!-- <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Search for...">
-              <span class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-          </form>   -->
-    
-    <!--<nav class="navbar navbar-dark bg-dark fixed-top sticky-top justify-content-right">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0 navbar-right">DM Cashew Corner</a>
-    <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    </nav>  -->
-    <!-- <form class="justify-content-right">
-    <input class="form-control form-control-dark w-25" type="text" placeholder="Search" aria-label="Search">
-    </form> -->
-    <!--   <ul class="navbar-nav px-3 navbar-right">
-        <li class="nav-item navbar-right">
-          <a class="nav-link" href="#" >Sign out</a>
-        </li>
-      </ul>  -->
-    <!-- </nav>   -->
 
-    <!--  <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>  -->
 
    
 
@@ -238,66 +180,6 @@ tr:hover::after,
         <nav class="col-md-2 d-none d-md-block bg-dark nav-link sidebar navbar-dark bg-dark">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-              <!-- <li class="nav-item active">
-                <a class=" nav-link" href="dashboard.php">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="monitor"></span>
-                  About
-                </a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users" ></span>
-                  Suppliers
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="user"></span>
-                  Customers
-                </a>
-              </li>
-            
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="book"></span>
-                  Employee Duties
-                </a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="dollar-sign"></span>
-                  Payroll
-                </a>
-              </li>
-              
-              
-              
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li> -->
 
                <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="dashboard.php">
@@ -305,12 +187,7 @@ tr:hover::after,
             <span class="nav-link-text">Dashboard</span>
           </a>
          </li>
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="monitor"></span>
-                  About
-                </a>
-              </li> -->
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="About">
           <a class="nav-link" href="#">
             <i class="fa fa-info-circle"></i>
@@ -318,12 +195,7 @@ tr:hover::after,
           </a>
         </li>
 
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="suppliers.php">
-                  <span data-feather="users" ></span>
-                  Suppliers
-                </a>
-              </li> -->
+
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Suppliers">
           <a class="nav-link" href="suppliers.php">
@@ -333,12 +205,6 @@ tr:hover::after,
         </li>
 
 
-             <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="user"></span>
-                  Customers
-                </a>
-              </li> -->
 
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
@@ -348,13 +214,7 @@ tr:hover::after,
           </a>
         </li>
 
-            <!-- 
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="book"></span>
-                  Employee Duties
-                </a>
-              </li> -->
+
              
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Employee Duties">
           <a class="nav-link" href="#">
@@ -364,13 +224,7 @@ tr:hover::after,
         </li>
 
 
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="dollar-sign"></span>
-                  Payroll
-                </a>
-              </li>
-               -->
+
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Payroll">
           <a class="nav-link" href="#">
@@ -379,12 +233,7 @@ tr:hover::after,
           </a>
         </li>
 
-           <!-- <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-                </a>
-              </li> -->
+
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
           <a class="nav-link" href="#">
@@ -393,12 +242,7 @@ tr:hover::after,
           </a>
         </li>
 
-            <!--   <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-                </a>
-              </li> -->
+
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
           <a class="nav-link" href="#">
@@ -407,12 +251,7 @@ tr:hover::after,
           </a>
         </li>
               
-            <!--   <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li> -->
+
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports">
           <a class="nav-link" href="#">
@@ -431,30 +270,7 @@ tr:hover::after,
               </a>
             </h6>
             <ul class="nav flex-column mb-2">
-             <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
-                </a>
-              </li> -->
+
                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Current month">
           <a class="nav-link" href="#">
             <i class="fa fa-file-pdf-o"></i>  
@@ -507,17 +323,12 @@ tr:hover::after,
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
 
-          <!--  <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button> -->
-           <!--  <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers2requiredDetails.php'" action="suppliers2requiredDetails.php">Most appropriate supplier list and Place orders</button>
 
-           <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers3handleSuppliers.php'" action="suppliers3handleSuppliers.php">Handle Supplier Details</button>
-          
-                 -->  
-          
-          
-                  
-            
-              
+
+
+
+
+
 
 
                <!--  <button class="btn btn-sm btn-outline-secondary">Share</button>
@@ -569,298 +380,164 @@ tr::before {
 
 <?php
 
-  $mysqli=new mysqli("localhost","root","","dmcashewcorner");
+          $link=new mysqli("localhost","root","","dmcashewcorner");
 
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "dmcashewcorner");
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+          //$link = mysqli_connect("localhost", "root", "", "dmcashewcorner");
 
-
-/*$sql="SELECT
-  Suppliers.suppliername, Suppliers.contactno,
-  Suppliers.location, event.event_id, event.type
-FROM
-  student, event
-  LEFT JOIN score ON student.student_id = score.student_id
-          AND event.event_id = score.event_id
-WHERE
-  score.score IS NULL
-ORDER BY
-  student.student_id, event.event_id";
-
-  SELECT pa.ProjectID, p.Project_Title, a.Account_ID, a.Username, a.Access_Type, c.First_Name, c.Last_Name
-      FROM Project_Assigned pa
-INNER JOIN Account a
-        ON pa.AccountID = a.Account_ID
-INNER JOIN Project p
-        ON pa.ProjectID = p.Project_ID
-INNER JOIN Clients c
-        ON a.Account_ID = c.Account_ID
-     WHERE a.Access_Type = 'Client';*/
-
-   /* $sql="SELECT 
-          supplierid,AVG(profit_per_unit) FROM table GROUP BY supplierid
-
-      suppliers s
-      
-        INNER JOIN purchaseorders po
-          ON s.supplierid=po.supplierid
-        INNER JOIN purchaseorderlines pol
-          ON po.porder_no=pol.porder_no
-        WHERE
-          pol.profit_per_unit<500
-        ORDER BY  
-          profit_per_unit DESC";  */
-        // session_start();
-       //  echo $_SESSION['sell'];
-        //  ($_SESSION['sell']);
-        //  $_SESSION['sell']=true;
-       //  $x = $_POST['sell'];
-       //  $x =$_SESSION['sell'];
-         $value=$_POST['sell'];
-//$value= '01';
-        //  echo $value;
-         /* echo "maljinee";*/
-
- $sql="SELECT 
-          s.suppliername,s.contactno,s.location FROM
-
-      suppliers s
-
-        INNER JOIN purchaseorders po
-  
-
-          ON s.supplierid=po.supplierid
-        INNER JOIN purchaseorderlines pol
-          ON po.porder_no=pol.porder_no
-        WHERE
-
-       pol.(SELECT AVG(profit_per_unit) FROM purchaseorderlines pol  GROUP BY s.suppliername)<500
-
-
-         /* pol.profit_per_unit<500*/
-
-        ORDER BY  
-          profit_per_unit DESC"; 
-
-  $sql="SELECT s.suppliername,s.contactno,s.location,AVG(profit_per_unit) AS profit_per_unit
-  FROM suppliers s 
-  INNER JOIN purchaseorders po
-  
-
-        ON s.supplierid=po.supplierid
-        INNER JOIN (SELECT*FROM purchaseorderlines WHERE item_no = '" . $value . "') pol
-          ON po.porder_no=pol.porder_no
-
-          GROUP BY s.suppliername
-          ORDER BY profit_per_unit DESC";
-
-
-          
-
-          /* INNER JOIN (SELECT*FROM purchaseorderlines WHERE item_no=' " . $value . "') pol*/
-
-
-          /*
-
-          SELECT s.suppliername,s.contactno,s.location,AVG(profit_per_unit) AS profit_per_unit FROM suppliers s INNER JOIN purchaseorders po ON s.supplierid=po.supplierid 
-INNER JOIN (SELECT*FROM purchaseorderlines WHERE item_no='01') pol ON po.porder_no=pol.porder_no GROUP BY s.suppliername ORDER BY profit_per_unit DESC
-
-
-          */
-
-/*(
-    SELECT ((sum(col1) + sum(col2))/count(*))
-    FROM test
-      WHERE uid=5
-    )  */
-//group by supplier id avarage column name
-   /* SELECT ID, AVG(number) FROM table GROUP BY ID
-*/
-
-        /*  purchaseorderlines,purchaseorders,suppliers
-          INNER JOIN purchaseorderlines ON purchaseorderlines.porder_no=purchaseorders.porder_no
-          AND suppliers.supplierid=purchaseorders.supplierid
-          WHERE
-          purchaseorderlines.profit_per_unit IS NULL
-          ORDER BY
-          purchaseorderlines.profit_per_unit";
-
-
-          $sql="SELECT 
-          suppliers.suppliername,suppliers.contactno,suppliers.location FROM
-          purchaseorderlines,purchaseorders,suppliers
-          INNER JOIN purchaseorderlines ON purchaseorderlines.porder_no=purchaseorders.porder_no
-          AND suppliers.supplierid=purchaseorders.supplierid
-          WHERE
-          purchaseorderlines.profit_per_unit IS NULL
-          ORDER BY
-          purchaseorderlines.profit_per_unit";
-*/
-
-                // Attempt select query execution with order by clause
-/*$sql = "SELECT * FROM purchaseorderlines ORDER BY profit_per_unit";*/
-
-
-
-if($result = mysqli_query($link, $sql)){
-    if(mysqli_num_rows($result) > 0){
-        /*echo "<table>";
-            echo "<tr>";
-                echo "<th>id</th>";
-                echo "<th>first_name</th>";
-                echo "<th>last_name</th>";
-                echo "<th>email</th>";
-            echo "</tr>";*/
-        while($row = mysqli_fetch_array($result)){
-            echo "<tr>";
-               /* echo "<td>" . $row['counter-increment: my-sec-counter; content: "Section " counter(my-sec-counter) ". ";'] . "</td>";*/
-                echo "<td>" . $row['suppliername'] . "</td>";
-                echo "<td>" . $row['contactno'] . "</td>";
-                echo "<td>" . $row['location'] . "</td>";
-            echo "</tr>";
+        // Check connection
+        if($link == false){
+            die("ERROR: Could not connect. " . mysqli_connect_error());
         }
 
 
+        $sell=$_POST['sell'];
+
+        $averageCostPerUnit= $_POST['averageCostPerUnit'];
+
+        $quantity= $_POST['quantity'];
+
+        $costPerUnit = $_POST['costPerUnit'];
+
+        $season = $_POST['season'];
+
+        $paymentMethod= $_POST['paymentMethod'];
+
+        $distance= $_POST['distance'];
+
+        $deliveryMethod= $_POST['deliveryMethod'];
+
+        $deliveryCost = $_POST['deliveryCost'];
+
+        $timeToReceive=   $_POST['timeToReceive'];
+
+        $qVariation=0.9;
+        $dtVariation=1.25;
+
+        $sql="SELECT i.item_no,pol.porder_no,pol.cost_per_unit,p.delivery_cost,p.delivery_method,p.supplierid,p.delivery_time,pol.quantity FROM items AS i JOIN purchaseorderlines AS pol ON pol.item_no=i.item_no JOIN purchaseorders AS p ON p.porder_no=pol.porder_no  WHERE i.item_no=$sell AND p.season=$season AND pol.quantity>=$qVariation*$quantity AND p.delivery_time<=$dtVariation*$timeToReceive AND p.delivery_method='by supplier'";
+
+
+        $blogic=array();
+        $fResult=array();
+
+
+        if($result = mysqli_query($link, $sql)){
+            if(mysqli_num_rows($result) > 0){
+
+
+                while($row = mysqli_fetch_array($result)){
+                    array_push($blogic,$row);
+
+                }
+
+                $average =array();
+                $tempArray=array();
+                $keyArray=array();
+                $tempid=null;
+
+                for ($i=0;$i<count($blogic);$i++){
+                    array_push($keyArray,$blogic[$i]["supplierid"]);
+                }
+                rsort($keyArray);
+
+                for ($i=0;$i<count($keyArray);$i++){
+                    if ($tempid==$keyArray[$i]){
+                        continue;
+                    }else{
+                        $tempid=$keyArray[$i];
+                        for($i=0;$i<count($blogic);$i++){
+                            if($blogic[$i]["supplierid"]==$tempid){
+                                array_push($tempArray,$blogic[$i]);
+                            }
+                        }
+                        if(count($tempArray)>0){
+                            $av=0;
+                            for($i=0;$i<count($tempArray);$i++){
+
+                                $av=$av+$tempArray[$i]["delivery_cost"]+$tempArray[$i]["cost_per_unit"] * $tempArray[$i]["quantity"];
+                            }
+                            $av=$av/(count($tempArray));
+                        }
+                        $t=array("id"=>$tempid,"average"=>$av);
+                        array_push($average,$t);
+                        reset($tempArray);
+                    }
+
+
+                }
 
 
 
 
+//                for ($i=0;$i<count($blogic);$i++){
+//                    $sid=$blogic[$i]["supplierid"];
+//                    $value=($blogic[$i]["delivery_cost"]+$blogic[$i]["cost_per_unit"] * $blogic[$i]["quantity"]);
+//                    $re=array("id"=>$sid,"value"=>$value);
+//                    array_push($average,$re);
+//                }
 
-        echo "</table>";
-        // Close result set
-        mysqli_free_result($result);
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
- 
-// Close connection
-mysqli_close($link);
+
+
+                //order result according to delivery_cost+cost_per_unit*quantity
+                do {
+                    $swapped=false;
+                    for($i=0,$c=count($average)-1;$i<$c;$i++){
+//                        $first=($blogic[$i]["delivery_cost"]+$blogic[$i]["cost_per_unit"] * $blogic[$i]["quantity"]);
+//                        $second=($blogic[$i+1]["delivery_cost"] + $blogic[$i+1]["cost_per_unit"] * $blogic[$i+1]["quantity"]);
+                        $first=$average[$i]["average"];
+                        $second=$average[$i+1]["average"];
+//                        echo $first;
+//                        echo "<br>";
+//                        echo $second;
+//                        echo "<br>";
+
+                        $compare=$first>$second;
+                        if($compare){
+                            list($average[$i+1],$average[$i])=array($average[$i],$average[$i+1]);
+                            $swapped=true;
+                        }
+                    }
+
+                }while($swapped);
+
+
+
+                for ($i=0;$i<count($average);$i++){
+                    $sid=$average[$i]["id"];
+                    $q="SELECT suppliername,contactno,location FROM suppliers WHERE supplierid=$sid";
+                    $re=mysqli_query($link,$q);
+                    $rr=mysqli_fetch_assoc($re);
+                    array_push($fResult,$rr);
+                }
+
+
+                for ($i=0;$i<count($fResult);$i++){
+                    $row=$fResult[$i];
+                    echo "<tr>";
+                       /* echo "<td>" . $row['counter-increment: my-sec-counter; content: "Section " counter(my-sec-counter) ". ";'] . "</td>";*/
+                        echo "<td>" . $row['suppliername'] . "</td>";
+                        echo "<td>" . $row['contactno'] . "</td>";
+                        echo "<td>" . $row['location'] . "</td>";
+                    echo "</tr>";
+                }
+
+
+                // Close result set
+                mysqli_free_result($result);
+            } else{
+                echo "No records matching your query were found.";
+            }
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        }
+
+        // Close connection
+        mysqli_close($link);
+
 ?>
 </tr>
 
 </tbody>
-              <!--   <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody> -->
+
             </table>
           </div>
         </main>
@@ -988,17 +665,6 @@ mysqli_close($link);
 
 
 
-            <button class="btn btn-primary" type="submit" id="loginbtn" name="submit">Login</button>
-          <!--  <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button> -->
-            <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">Create an Account</button>
-            <!--  <button class="btn btn-primary" type="submit" name="submit">Sign Up</button> -->
-              
-
-  
-
-
-
-   
   
 
     <!-- Bootstrap core JavaScript

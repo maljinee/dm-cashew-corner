@@ -430,8 +430,8 @@
                     <div class="col-sm-4 form-group">
                         <!--  <label for="sel1">Select list (select one):</label> -->
                         <select class="form-control" name="deliveryMethod" id="deliveryMethod">
-                            <option>Delivery by Supplier</option>
-                            <option>by Company Vehicles</option>
+                            <option>by Supplier</option>
+                            <option>by Company</option>
 
                         </select>
                     </div>
