@@ -71,10 +71,17 @@
       {
         vertical-align: right;
       }
+    </style>
+
+     <!--  <style>
+      tr:hover {
+        background-color: transparent;
+      }
+
 
 
     
-    </style>
+    </style> -->
 
     <style type="text/css">
       .nav-link {
@@ -88,7 +95,7 @@
 }
 
 tr:hover {
-  background-color: #ADD8E6;
+  background-color:;
 }
 
 tr  {
@@ -348,13 +355,14 @@ tr:hover::after,
           table-striped
  -->
           <div class="table-responsive">
-            <table class="table  table-sm">
+            <table class="table table-bordered table-hover  table-sm">
               <thead>
                 <tr>
                  <!--  <th>Number</th> -->
                   <th>Supplier Name</th>
                   <th>Telephone No</th>
                   <th>Location</th>
+                  <th></th>
                   <!-- <th>Header</th> -->
                 </tr>
               </thead>
@@ -465,30 +473,12 @@ tr::before {
 
                 }
 
-
-
-
-//                for ($i=0;$i<count($blogic);$i++){
-//                    $sid=$blogic[$i]["supplierid"];
-//                    $value=($blogic[$i]["delivery_cost"]+$blogic[$i]["cost_per_unit"] * $blogic[$i]["quantity"]);
-//                    $re=array("id"=>$sid,"value"=>$value);
-//                    array_push($average,$re);
-//                }
-
-
-
-                //order result according to delivery_cost+cost_per_unit*quantity
                 do {
                     $swapped=false;
                     for($i=0,$c=count($average)-1;$i<$c;$i++){
-//                        $first=($blogic[$i]["delivery_cost"]+$blogic[$i]["cost_per_unit"] * $blogic[$i]["quantity"]);
-//                        $second=($blogic[$i+1]["delivery_cost"] + $blogic[$i+1]["cost_per_unit"] * $blogic[$i+1]["quantity"]);
+
                         $first=$average[$i]["average"];
                         $second=$average[$i+1]["average"];
-//                        echo $first;
-//                        echo "<br>";
-//                        echo $second;
-//                        echo "<br>";
 
                         $compare=$first>$second;
                         if($compare){
@@ -517,8 +507,11 @@ tr::before {
                         echo "<td>" . $row['suppliername'] . "</td>";
                         echo "<td>" . $row['contactno'] . "</td>";
                         echo "<td>" . $row['location'] . "</td>";
+                        echo "<td><a><button>Place Order</button></a></td>";
                     echo "</tr>";
                 }
+
+               /* <td><a href='delete.php?id=".$book['Staff_ID']."'>Delete</a></td>*/
 
 
                 // Close result set
@@ -540,6 +533,11 @@ tr::before {
 
             </table>
           </div>
+
+            <div class="col-sm-4" action="suppliers6placeorders.php">
+                <input type="submit" name="search" value="Place a Order" id="search" onClick="document.location.href='suppliers6placeorders.php'"  class="btn btn-primary">
+                <!--   <button type="submit" class="btn btn-primary">View</button> -->
+            </div>
         </main>
       </div>
     </div>

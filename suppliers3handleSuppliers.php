@@ -464,12 +464,12 @@
         {
           while($rows=mysqli_fetch_array($search_result))
           {
-            $supplierid=$rows['supplierid'];
+           /* $supplierid=$rows['supplierid'];
             $suppliername=$rows['suppliername'];
             $contactno=$rows['contactno'];
             $address=$rows['address'];
             $distance=$rows['distance'];
-            $location=$rows['location'];
+            $location=$rows['location'];*/
           }
         }else{
           echo("no data are available");
@@ -775,22 +775,7 @@ if($result = mysqli_query($link, $sql)){
             echo "<form method='post'>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
-               /* echo "<td>" . $row['counter-increment: my-sec-counter; content: "Section " counter(my-sec-counter) ". ";'] . "</td>";*/
-              /*  echo "<td><input type='text' value='" . $row['supplierid'] . "' name='supplierid' id='supplierid'></td>";
-                echo "<td><input type='text' value='" . $row['suppliername'] . "' name='suppliername' id='suppliername'></td>";
-                echo "<td><input type='text' value='" . $row['contactno'] . "' name='contactno' id='contactno'></td>";
-                echo "<td><input type='text' value='" . $row['address'] . "' name='address' id='address'></td>";
-                echo "<td><input type='text' value='" . $row['distance'] . "' name='distance' id='distance'></td>";
-                echo "<td><input type='text' value='" . $row['location'] . "' name='location' id='location'</td>";
-                echo "<td><input class='btn btn-primary' type='submit' name='update' id='update' value='Edit'></td>";
-*/
-               /*  type="submit" name="update" id="update" value="Update" disabled="disabled" class="btn btn-primary
-*/
-
-               /* class="btn btn-primary"*/
-
-               /* echo "<td><input type='text' contenteditable='false' value='" . $row['supplierid'] . "' name='id'></td>";*/
-
+               
                 echo "<td>" . $row['supplierid'] . "</td>";
                 echo "<td>" . $row['suppliername'] . "</td>";
                 echo "<td>" . $row['contactno'] . "</td>";
