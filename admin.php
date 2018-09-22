@@ -725,7 +725,7 @@ table#t01 {
 
       </select> -->
       
-     <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">Create an Account</button>
+    <!--  <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">Create an Account</button> -->
 
    <!--   <button class="btn btn-outline-primary" data-target="#signupModal" data-dismiss="modal" data-toggle="modal">View Users</button> -->
 

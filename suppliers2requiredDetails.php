@@ -470,7 +470,7 @@
 <!--                            --><?php
 //                             $_POST['averageCostPerUnit'];
 //                            ?>
-                        >
+
 
                     </div>
                 </div>
