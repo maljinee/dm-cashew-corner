@@ -14,6 +14,7 @@
   }
 ?>
 
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -326,13 +327,14 @@
   <h4>
         <P style="text-align: center">Please enter required details</P>
   </h4>
+
   <form class="border-class" method="POST" name="form1" action="./save_order.php">
 
-
+        
           <div class="form-group row col-md-12 ml-md">
                 <label class="col-sm-2 col-form-label"><strong>Date</strong></label>
                  <div class="col-sm-4 form-group">
-                     <input type="date" name="date" class="form-control" id="date-" placeholder="                                      ">
+                     <input type="date" name="date" class="form-control" id="date" placeholder="                                      ">
                  </div>
 
                 <div class="col-sm-1">
@@ -384,9 +386,9 @@
                 <div class="col-sm-2">
                      <label  class="col-sm-3 col-form-label"><strong>Quantity</strong></label>
                 </div>
-
+                
                 <div class="col-sm-3">
-                   <input type="number" name="quantity" class="form-control" id="quantity" placeholder="                                     ">
+                   <input type="number" name="quantity" class="form-control" id="quantity" placeholder="$">
                 </div>
 
           </div>
@@ -394,7 +396,7 @@
               <div class="form-group row col-md-12 ml-md">
                   <label class="col-sm-2 col-form-label"><strong>Delivery Time</strong></label>
                   <div class="col-sm-4 " >
-                      <input type="number" name="deliveryTime" class="form-control" id="deliveryTime" placeholder="                                                         Hr">
+                      <input type="number" name="deliveryTime" class="form-control" id="deliveryTime" placeholder="">
                   </div>
 
                   <div class="col-sm-1">
@@ -405,8 +407,8 @@
 
                   <div class="col-sm-3 form-group">
                       <select name="paymentMethod" class="form-control" id="paymentMethod">
-                          <option>by cash</option>
-                          <option>by card</option>
+                          <option value="1">by cash</option>
+                          <option value="2">by card</option>
                       </select>
                   </div>
 
@@ -421,7 +423,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                      <input type="number" name="deliveryCost" class="form-control" id="deliveryCost" placeholder="                                    (Rs)">
+                      <input type="number" name="deliveryCost" class="form-control" id="deliveryCost" placeholder="">
                     </div>
 
                     <div class="col-sm-1">
@@ -432,7 +434,7 @@
                 </div>
                 <div class="col-sm-3 form-group">
                     <!--  <label for="sel1">Select list (select one):</label> -->
-                    <input type="number" name="itemNumber" class="form-control" id="itemNumber" placeholder="                                      ">
+                    <input type="number" name="itemNumber" class="form-control" id="itemNumber" placeholder="">
                 </div>
             </div>
 
@@ -443,8 +445,8 @@
                   <label class="col-sm-2 col-form-label"><strong>Delivery Method</strong></label>
                   <div class="col-sm-4 form-group">
                       <select name="deliveryMethod" class="form-control" id="deliveryMethod">
-                          <option>Delivery by Supplier</option>
-                          <option>by Company Vehicles</option>
+                          <option value="1">by Supplier</option>
+                          <option value="2">by Company</option>
                       </select>
                   </div>
                   <div class="col-sm-1">
@@ -455,7 +457,7 @@
                   </div>
                   <div class="col-sm-3 form-group">
                       <!--  <label for="sel1">Select list (select one):</label> -->
-                      <input type="number" name="quality" class="form-control" id="quality" placeholder="                                      ">
+                      <input type="number" name="quality" class="form-control" id="quality" placeholder="">
                   </div>
 
               </div>
@@ -464,17 +466,19 @@
       <div class="form-group row col-md-12 ml-md">
           <label class="col-sm-2 col-form-label"><strong>cost per unit</strong></label>
           <div class="col-sm-4">
-              <input type="text" name="costPerUnit" class="form-control" id="costPerUnit" placeholder="                                    (Rs)">
+              <input type="text" name="costPerUnit" class="form-control" id="costPerUnit" placeholder=" ">
           </div>
       </div>
 
           <div class="col-md-3">
-                <input type="submit" name="Submit" value="Submit" onclick="alert()" class="btn btn-primary">
+                <input type="submit" name="Submit" value="Submit"  class="btn btn-primary">
            </div>
 
     </div>
 
 </form>
+
+
 
          
 
@@ -609,6 +613,55 @@
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
+    </script>
+    
+    <script>
+          document.addEventListener("DOMContentLoaded",ready);
+          function ready() {
+                  var items = new URL(location.href);
+
+                  var d=document.getElementById("quantity");
+                  var va=items.searchParams.get("qun");
+                  d.value=Number(va);
+
+                  var itn=document.getElementById("itemName");
+                  var itemName=items.searchParams.get("sell");
+
+                  if(itemName==="01"){
+                      itn.value="White Cashew High Quality";
+                  }else if(itemName==="02"){
+                      itn.value="White Cashew Low Quality";
+                  }else if(itemName==="03"){
+                      itn.value="Black Cashew High Quality";
+                  }else if(itemName==="04"){
+                      itn.value="Black Cashew Low Quality";
+                  }
+
+                  var cp=document.getElementById("costPerUnit");
+                  var costPunit=items.searchParams.get("cpu");
+                  cp.value=Number(costPunit);
+
+                  var pm=document.getElementById("paymentMethod");
+                  var paym=items.searchParams.get("pay");
+                  if(paym==="01"){
+                      pm.selectedIndex=0;
+                  }else if(paym==="02"){
+                      pm.selectedIndex=1;
+                  }
+
+
+                  var dm=document.getElementById("deliveryMethod");
+                  var delm=items.searchParams.get("dm");
+                  if(delm==="01"){
+                      console.log("in 1");
+                      dm.selectedIndex=0;
+                  }else if(delm==="02"){
+                      console.log("in two");
+                      dm.selectedIndex=1;
+                  }
+                  console.log(dm.selectedIndex);
+          }
+
     </script>
 
     <!-- Graphs -->

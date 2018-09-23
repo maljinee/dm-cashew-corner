@@ -177,11 +177,6 @@ tr:hover::after,
     </nav>
 
 
-
-
-
-   
-
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-dark nav-link sidebar navbar-dark bg-dark">
@@ -329,16 +324,7 @@ tr:hover::after,
             
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-
-
-
-
-
-
-
-
-
-               <!--  <button class="btn btn-sm btn-outline-secondary">Share</button>
+               <!--  <button clss="btn btn-sm btn-outline-secondary">Share</button>
                 <button class="btn btn-sm btn-outline-secondary">Export</button> -->
               </div>
               <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
@@ -362,172 +348,137 @@ tr:hover::after,
                   <th>Supplier Name</th>
                   <th>Telephone No</th>
                   <th>Location</th>
-                  <th></th>
+                  <th>Place Order</th>
                   <!-- <th>Header</th> -->
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                   <style>
+                        body {
+                        body {
 
+                                counter-reset: my-sec-counter;
+                        }
 
-       <style>
-body {
-   body {
-    /* Set "my-sec-counter" to 0 */
-    counter-reset: my-sec-counter;
-}
+                        tr::before {
+                        /* Increment "my-sec-counter" by 1 */
+                        counter-increment: my-sec-counter;
+                        content: "Section " counter(my-sec-counter) ". ";
+                        }
+                        }
 
-tr::before {
-    /* Increment "my-sec-counter" by 1 */
-    counter-increment: my-sec-counter;
-    content: "Section " counter(my-sec-counter) ". ";
-} 
-}
+                  </style>
 
-</style>
+                  <?php
 
-<?php
+                        $link=new mysqli("localhost","root","","dmcashewcorner");
+                        // Check connection
+                        if($link == false){
+                            die("ERROR: Could not connect. " . mysqli_connect_error());
+                        }
 
-          $link=new mysqli("localhost","root","","dmcashewcorner");
+                        $sell=$_POST['sell'];
+                        $averageCostPerUnit= $_POST['averageCostPerUnit'];
+                        $quantity= $_POST['quantity'];
+                        $costPerUnit = $_POST['costPerUnit'];
+                        $season = $_POST['season'];
+                        $paymentMethod= $_POST['paymentMethod'];
+                        $distance= $_POST['distance'];
+                        $deliveryMethod= $_POST['deliveryMethod'];
+                        $deliveryCost = $_POST['deliveryCost'];
+                        $timeToReceive=   $_POST['timeToReceive'];
+                        $qVariation=0.9;
+                        $dtVariation=1.25;
 
-          //$link = mysqli_connect("localhost", "root", "", "dmcashewcorner");
+                        $sql="SELECT i.item_no,pol.porder_no,pol.cost_per_unit,p.delivery_cost,p.delivery_method,p.supplierid,p.delivery_time,pol.quantity FROM items AS i JOIN purchaseorderlines AS pol ON pol.item_no=i.item_no JOIN purchaseorders AS p ON p.porder_no=pol.porder_no  WHERE i.item_no=$sell AND p.season=$season AND pol.quantity>=$qVariation*$quantity AND p.delivery_time<=$dtVariation*$timeToReceive AND p.delivery_method='by supplier'";
 
-        // Check connection
-        if($link == false){
-            die("ERROR: Could not connect. " . mysqli_connect_error());
-        }
+                        $blogic=array();
+                        $fResult=array();
 
+                        if($result = mysqli_query($link, $sql)){
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_array($result)){
+                                    array_push($blogic,$row);
 
-        $sell=$_POST['sell'];
+                                }
+                                $average =array();
+                                $tempArray=array();
+                                $keyArray=array();
+                                $tempid=null;
+                                for ($i=0;$i<count($blogic);$i++){
+                                    array_push($keyArray,$blogic[$i]["supplierid"]);
+                                }
+                                rsort($keyArray);
+                                for ($i=0;$i<count($keyArray);$i++){
+                                    if ($tempid==$keyArray[$i]){
+                                        continue;
+                                    }else{
+                                        $tempid=$keyArray[$i];
+                                        for($i=0;$i<count($blogic);$i++){
+                                            if($blogic[$i]["supplierid"]==$tempid){
+                                                array_push($tempArray,$blogic[$i]);
+                                            }
+                                        }
+                                        if(count($tempArray)>0){
+                                            $av=0;
+                                            for($i=0;$i<count($tempArray);$i++){
 
-        $averageCostPerUnit= $_POST['averageCostPerUnit'];
+                                                $av=$av+$tempArray[$i]["delivery_cost"]+$tempArray[$i]["cost_per_unit"] * $tempArray[$i]["quantity"];
+                                            }
+                                            $av=$av/(count($tempArray));
+                                        }
+                                        $t=array("id"=>$tempid,"average"=>$av);
+                                        array_push($average,$t);
+                                        reset($tempArray);
+                                    }
+                                }
+                                do {
+                                    $swapped=false;
+                                    for($i=0,$c=count($average)-1;$i<$c;$i++){
 
-        $quantity= $_POST['quantity'];
+                                        $first=$average[$i]["average"];
+                                        $second=$average[$i+1]["average"];
 
-        $costPerUnit = $_POST['costPerUnit'];
-
-        $season = $_POST['season'];
-
-        $paymentMethod= $_POST['paymentMethod'];
-
-        $distance= $_POST['distance'];
-
-        $deliveryMethod= $_POST['deliveryMethod'];
-
-        $deliveryCost = $_POST['deliveryCost'];
-
-        $timeToReceive=   $_POST['timeToReceive'];
-
-        $qVariation=0.9;
-        $dtVariation=1.25;
-
-        $sql="SELECT i.item_no,pol.porder_no,pol.cost_per_unit,p.delivery_cost,p.delivery_method,p.supplierid,p.delivery_time,pol.quantity FROM items AS i JOIN purchaseorderlines AS pol ON pol.item_no=i.item_no JOIN purchaseorders AS p ON p.porder_no=pol.porder_no  WHERE i.item_no=$sell AND p.season=$season AND pol.quantity>=$qVariation*$quantity AND p.delivery_time<=$dtVariation*$timeToReceive AND p.delivery_method='by supplier'";
-
-
-        $blogic=array();
-        $fResult=array();
-
-
-        if($result = mysqli_query($link, $sql)){
-            if(mysqli_num_rows($result) > 0){
-
-
-                while($row = mysqli_fetch_array($result)){
-                    array_push($blogic,$row);
-
-                }
-
-                $average =array();
-                $tempArray=array();
-                $keyArray=array();
-                $tempid=null;
-
-                for ($i=0;$i<count($blogic);$i++){
-                    array_push($keyArray,$blogic[$i]["supplierid"]);
-                }
-                rsort($keyArray);
-
-                for ($i=0;$i<count($keyArray);$i++){
-                    if ($tempid==$keyArray[$i]){
-                        continue;
-                    }else{
-                        $tempid=$keyArray[$i];
-                        for($i=0;$i<count($blogic);$i++){
-                            if($blogic[$i]["supplierid"]==$tempid){
-                                array_push($tempArray,$blogic[$i]);
+                                        $compare=$first>$second;
+                                        if($compare){
+                                            list($average[$i+1],$average[$i])=array($average[$i],$average[$i+1]);
+                                            $swapped=true;
+                                        }
+                                    }
+                                }while($swapped);
+                                for ($i=0;$i<count($average);$i++){
+                                    $sid=$average[$i]["id"];
+                                    $q="SELECT suppliername,contactno,location FROM suppliers WHERE supplierid=$sid";
+                                    $re=mysqli_query($link,$q);
+                                    $rr=mysqli_fetch_assoc($re);
+                                    array_push($fResult,$rr);
+                                }
+                                for ($i=0;$i<count($fResult);$i++){
+                                    $row=$fResult[$i];
+                                    $sup=$row['suppliername'];
+                                    $con=$row['contactno'];
+                                    $loc=$row['location'];
+                                    echo "<tr>";
+                                       /* echo "<td>" . $row['counter-increment: my-sec-counter; content: "Section " counter(my-sec-counter) ". ";'] . "</td>";*/
+                                        echo "<td>" . $row['suppliername'] . "</td>";
+                                        echo "<td>" . $row['contactno'] . "</td>";
+                                        echo "<td>" . $row['location'] . "</td>";
+                                        echo "<td><a><button class='btn-success' data-sell='$sell' data-acpu='$averageCostPerUnit' data-qun='$quantity' data-cpu='$costPerUnit' 
+                                                data-sea ='$season' data-pay='$paymentMethod' data-dis='$distance' data-dm='$deliveryMethod' 
+                                                data-dc='$deliveryCost' data-ttr='$timeToReceive' onclick='placeOrder(this)'>Place Order</button></a></td>";
+                                    echo "</tr>";
+                                }
+                                mysqli_free_result($result);
+                            } else{
+                                echo "No records matching your query were found.";
                             }
+                        } else{
+                            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
                         }
-                        if(count($tempArray)>0){
-                            $av=0;
-                            for($i=0;$i<count($tempArray);$i++){
-
-                                $av=$av+$tempArray[$i]["delivery_cost"]+$tempArray[$i]["cost_per_unit"] * $tempArray[$i]["quantity"];
-                            }
-                            $av=$av/(count($tempArray));
-                        }
-                        $t=array("id"=>$tempid,"average"=>$av);
-                        array_push($average,$t);
-                        reset($tempArray);
-                    }
-
-
-                }
-
-                do {
-                    $swapped=false;
-                    for($i=0,$c=count($average)-1;$i<$c;$i++){
-
-                        $first=$average[$i]["average"];
-                        $second=$average[$i+1]["average"];
-
-                        $compare=$first>$second;
-                        if($compare){
-                            list($average[$i+1],$average[$i])=array($average[$i],$average[$i+1]);
-                            $swapped=true;
-                        }
-                    }
-
-                }while($swapped);
-
-
-
-                for ($i=0;$i<count($average);$i++){
-                    $sid=$average[$i]["id"];
-                    $q="SELECT suppliername,contactno,location FROM suppliers WHERE supplierid=$sid";
-                    $re=mysqli_query($link,$q);
-                    $rr=mysqli_fetch_assoc($re);
-                    array_push($fResult,$rr);
-                }
-
-
-                for ($i=0;$i<count($fResult);$i++){
-                    $row=$fResult[$i];
-                    echo "<tr>";
-                       /* echo "<td>" . $row['counter-increment: my-sec-counter; content: "Section " counter(my-sec-counter) ". ";'] . "</td>";*/
-                        echo "<td>" . $row['suppliername'] . "</td>";
-                        echo "<td>" . $row['contactno'] . "</td>";
-                        echo "<td>" . $row['location'] . "</td>";
-                        echo "<td><a><button>Place Order</button></a></td>";
-                    echo "</tr>";
-                }
-
-               /* <td><a href='delete.php?id=".$book['Staff_ID']."'>Delete</a></td>*/
-
-
-                // Close result set
-                mysqli_free_result($result);
-            } else{
-                echo "No records matching your query were found.";
-            }
-        } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-        }
-
-        // Close connection
-        mysqli_close($link);
-
-?>
-</tr>
+                        mysqli_close($link);
+                  ?>
+                </tr>
 
 </tbody>
 
@@ -713,6 +664,22 @@ tr::before {
           }
         }
       });
+    </script>
+    <script>
+        function placeOrder(param) {
+            var sell =$(param).data('sell');
+            var acpu =$(param).data('acpu');
+            var qun =$(param).data('qun');
+            var cpu =$(param).data('cpu');
+            var sea =$(param).data('sea');
+            var pay =$(param).data('pay');
+            var dis =$(param).data('dis');
+            var dm =$(param).data('dm');
+            var dc =$(param).data('dc');
+            var ttr =$(param).data('ttr');
+            window.location.href="http://localhost/dm-cashew-corner/suppliers6placeorders.php"+"?acpu="+acpu+"&qun="+qun+"&cpu="+cpu
+            +"&sea="+sea+"&pay="+pay+"&dis="+dis+"&dm="+dm+"&dc="+dc+"&ttr="+ttr+"&sell="+sell;
+        }
     </script>
 <?php
    $_SESSION['authentication']=true;
