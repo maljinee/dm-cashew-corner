@@ -55,7 +55,7 @@ else
      
       .form
       {
-        vertical-align: right;
+        vertical-align: center;
       }
 
 
@@ -134,109 +134,12 @@ else
       </div>
     </nav>
 
-
-  
-    <!-- <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Search for...">
-              <span class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-          </form>   -->
-    
-    <!--<nav class="navbar navbar-dark bg-dark fixed-top sticky-top justify-content-right">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0 navbar-right">DM Cashew Corner</a>
-    <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    </nav>  -->
-    <!-- <form class="justify-content-right">
-    <input class="form-control form-control-dark w-25" type="text" placeholder="Search" aria-label="Search">
-    </form> -->
-    <!--   <ul class="navbar-nav px-3 navbar-right">
-        <li class="nav-item navbar-right">
-          <a class="nav-link" href="#" >Sign out</a>
-        </li>
-      </ul>  -->
-    <!-- </nav>   -->
-
-    <!--  <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
-        </li>  -->
-
-   
-
     <div class="container-fluid">
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-dark nav-link sidebar navbar-dark bg-dark style="background-color: #4682B4;" >
+        <nav class="col-md-2 d-none d-md-block bg-dark nav-link sidebar navbar-dark bg-dark" style="background-color: #4682B4" >
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-              <!-- <li class="nav-item active">
-                <a class=" nav-link" href="dashboard.php">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="monitor"></span>
-                  About
-                </a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users" ></span>
-                  Suppliers
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="user"></span>
-                  Customers
-                </a>
-              </li>
-            
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="book"></span>
-                  Employee Duties
-                </a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="dollar-sign"></span>
-                  Payroll
-                </a>
-              </li>
-              
-              
-              
 
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-                </a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li> -->
 
                <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="dashboard.php">
@@ -244,12 +147,7 @@ else
             <span class="nav-link-text">Dashboard</span>
           </a>
          </li>
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="monitor"></span>
-                  About
-                </a>
-              </li> -->
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="About">
           <a class="nav-link" href="#">
             <i class="fa fa-info-circle"></i>
@@ -257,12 +155,6 @@ else
           </a>
         </li>
 
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="suppliers.php">
-                  <span data-feather="users" ></span>
-                  Suppliers
-                </a>
-              </li> -->
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Suppliers">
           <a class="nav-link" href="suppliers.php">
@@ -272,14 +164,6 @@ else
         </li>
 
 
-             <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="user"></span>
-                  Customers
-                </a>
-              </li> -->
-
-
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Customers">
           <a class="nav-link" href="customers.php">
             <i class="fa fa-group"></i>
@@ -287,13 +171,6 @@ else
           </a>
         </li>
 
-            <!-- 
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="book"></span>
-                  Employee Duties
-                </a>
-              </li> -->
              
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Employee Duties">
           <a class="nav-link" href="#">
@@ -303,27 +180,12 @@ else
         </li>
 
 
-              <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="dollar-sign"></span>
-                  Payroll
-                </a>
-              </li>
-               -->
-
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Payroll">
           <a class="nav-link" href="#">
             <i class=" fa fa-money"></i>
             <span class="nav-link-text">Payroll</span>
           </a>
         </li>
-
-           <!-- <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-                </a>
-              </li> -->
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders">
           <a class="nav-link" href="#">
@@ -332,12 +194,6 @@ else
           </a>
         </li>
 
-            <!--   <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
-                </a>
-              </li> -->
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Products">
           <a class="nav-link" href="#">
@@ -346,12 +202,6 @@ else
           </a>
         </li>
               
-            <!--   <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
-                  Reports
-                </a>
-              </li> -->
 
 
           <?php
@@ -387,30 +237,7 @@ else
 
 
             <ul class="nav flex-column mb-2">
-             <!--  <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
-                </a>
-              </li> -->
+
                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Current month">
           <a class="nav-link" href="#">
             <i class="fa fa-file-pdf-o"></i>  
@@ -471,23 +298,15 @@ else
               <div class="btn-group mr-2">
 
           <!--  <button class="btn btn-primary" type="submit" data-dismiss="modal">Close</button> -->
+             <button class="btn btn-sm btn-outline-secondary"  onClick="document.location.href='supplierOrder.php'">Supplier Orders</button>
+
             <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers2requiredDetails.php'" action="suppliers2requiredDetails.php">Most appropriate supplier list and Place orders</button>
 
-           <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers3handleSuppliers.php'" action="suppliers3handleSuppliers.php">Handle Supplier Details</button>
+            <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers3handleSuppliers.php'" action="suppliers3handleSuppliers.php">Handle Supplier Details</button>
 
             <button class="btn btn-sm btn-outline-secondary" type="submit" onClick="document.location.href='suppliers5search.php'" action="suppliers5search.php">Search suppliers by Clues</button>
 
-          
-                  
-          
-          
-                  
-            
-              
 
-
-               <!--  <button class="btn btn-sm btn-outline-secondary">Share</button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button> -->
               </div>
               <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
                 <span data-feather="calendar"></span>
@@ -496,8 +315,7 @@ else
             </div>
           </div>
 
-         <!--  <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
- -->
+
           <h1>Recent Orders</h1>
 
           <div class="table-responsive" style="overflow-y: auto;height: 250px">
@@ -516,7 +334,7 @@ else
                   <!-- <th>Header</th> -->
                 </tr>
               </thead>
-              <tbody height:"40px" overflow-y:"scroll">
+              <tbody style="height:"40px" overflow-y:"scroll"">
                 <tr>
  
 
@@ -571,31 +389,14 @@ if($result = mysqli_query($link, $sql)){
             echo "<form method='post'>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
-               /* echo "<td>" . $row['counter-increment: my-sec-counter; content: "Section " counter(my-sec-counter) ". ";'] . "</td>";*/
-              /*  echo "<td><input type='text' value='" . $row['supplierid'] . "' name='supplierid' id='supplierid'></td>";
-                echo "<td><input type='text' value='" . $row['suppliername'] . "' name='suppliername' id='suppliername'></td>";
-                echo "<td><input type='text' value='" . $row['contactno'] . "' name='contactno' id='contactno'></td>";
-                echo "<td><input type='text' value='" . $row['address'] . "' name='address' id='address'></td>";
-                echo "<td><input type='text' value='" . $row['distance'] . "' name='distance' id='distance'></td>";
-                echo "<td><input type='text' value='" . $row['location'] . "' name='location' id='location'</td>";
-                echo "<td><input class='btn btn-primary' type='submit' name='update' id='update' value='Edit'></td>";
-*/
-               /*  type="submit" name="update" id="update" value="Update" disabled="disabled" class="btn btn-primary
-*/
 
-               /* class="btn btn-primary"*/
-
-               /* echo "<td><input type='text' contenteditable='false' value='" . $row['supplierid'] . "' name='id'></td>";*/
 
                 echo "<td>" . $row['porder_no'] . "</td>";
                 echo "<td>" . $row['date'] . "</td>";
                 echo "<td>" . $row['total_cost'] . "</td>";
                 echo "<td>" . $row['invoice_no'] . "</td>";
                  echo "<td>" . $row['status'] . "</td>";
-              /*  echo "<td>" . $row['distance'] . "</td>";
-                echo "<td>" . $row['location'] . "</td>";*/
-               /* echo "<td><input class='btn btn-primary' type='submit' name='update' id='update' value='Edit'></td>";*/
-                
+
 
             echo "</tr>";
         }
@@ -626,137 +427,6 @@ mysqli_close($link);
 </tbody>          
 
 
-
-
-         <!--  <h2>Recent Orders</h2
-          
-
-          <div class="table-responsive">
-            <table class="table table-striped table-sm">
-              <thead>
-                <tr>
-                  <th>Order No</th>
-                  <th>Date</th>
-                  <th>Cashew Type</th>
-                  <th>Unit Cost</th>
-                  <th>Supplier Name</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody> -->
             </table>
           </div>
 
@@ -782,9 +452,6 @@ mysqli_close($link);
           <div class="modal-body">Are you sure you want to logout?</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-             <!-- <button class="btn btn-outline-success btn-primary" data-target="#loginModal" data-toggle="modal" data-dismiss="modal">Logout</button> -->
-            <!--  <button class="btn btn-outline-primary" data-target="#loginModal" data-dismiss="modal" data-toggle="modal">Logout</button>
-               -->
 
                  <button class="btn btn-outline-primary" type="submit" data-target="#loginModal" onclick="document.location.href='logout.php'">Logout</button>
               
@@ -812,13 +479,7 @@ mysqli_close($link);
 
           <div class="modal-body">
              <form class="form-signin" method="post" action="">
-      
-     <!-- <div class="form-group">
-        <label for="fullName">Name</label>
-        <input type="text" id="fullNames" class="form-control" placeholder="Full Name" name="fullnames" required>
 
-
-      </div> -->
        <style>
     /*.required:after { content:" *"; }
 */
