@@ -401,8 +401,8 @@
                     <div class="col-sm-4 form-group">
                         <!--  <label for="sel1">Select list (select one):</label> -->
                         <select class="form-control" name="paymentMethod" id="paymentMethod">
-                            <option>After sale</option>
-                            <option>On deliver</option>
+                            <option value="01">by cash</option>
+                            <option value="02">by card</option>
 
                         </select>
                     </div>
@@ -430,8 +430,8 @@
                     <div class="col-sm-4 form-group">
                         <!--  <label for="sel1">Select list (select one):</label> -->
                         <select class="form-control" name="deliveryMethod" id="deliveryMethod">
-                            <option>by Supplier</option>
-                            <option>by Company</option>
+                            <option value="01">by Supplier</option>
+                            <option value="02">by Company</option>
 
                         </select>
                     </div>
