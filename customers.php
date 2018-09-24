@@ -750,9 +750,17 @@ mysqli_close($link);
                 </tr>
               </tbody> -->
             </table>
+              <div class="col-sm-4" action="suppliers6placeorders.php">
+            <input type="submit" name="search" value="Place an Order" id="search" onClick="document.location.href='customers6placeorders.php'"  class="btn btn-primary">
+            <!--   <button type="submit" class="btn btn-primary">View</button> -->
+          </div>
           </div>
         </main>
       </div>
+
+
+
+
     </div>
 
 

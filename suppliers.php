@@ -761,7 +761,7 @@ mysqli_close($link);
           </div>
 
           <div class="col-sm-4" action="suppliers6placeorders.php">
-            <input type="submit" name="search" value="Place a Order" id="search" onClick="document.location.href='suppliers6placeorders.php'"  class="btn btn-primary">
+            <input type="submit" name="search" value="Place an Order" id="search" onClick="document.location.href='suppliers6placeorders.php'"  class="btn btn-primary">
             <!--   <button type="submit" class="btn btn-primary">View</button> -->
           </div> 
         </main>
